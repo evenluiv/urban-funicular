@@ -1,4 +1,4 @@
-import { Route, Routes } from "react-router-dom"
+import { Route, Routes, useLocation } from "react-router-dom"
 import Navbar from "./Pages/components/Navbar"
 import Blogi from "./Pages/Blogi"
 import Kodu from "./Pages/Kodu/index"
@@ -8,8 +8,22 @@ import Galerii from "./Pages/Galerii"
 import Kontakt from "./Pages/Kontakt"
 import FooterBar from "./Pages/components/FooterBar"
 import Footer from "./Pages/components/Footer"
+import { useEffect } from "react"
 
 const App = () => {
+
+  const location = useLocation();
+
+    useEffect(() => {
+        const reloaded = sessionStorage.getItem('reloaded');
+        if (location.pathname === '/blogi' && !reloaded) {
+            sessionStorage.setItem('reloaded', 'true');
+            window.location.reload();
+        } else if (location.pathname !== '/blogi') {
+            sessionStorage.removeItem('reloaded');
+        }
+    }, [location]);
+
 
   return (
     <div className='app bg-pink-100'>

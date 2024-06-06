@@ -6,33 +6,33 @@ import moonIcon from "../../../src/assets/moon-icon.png";
 import PriceCard from "../components/PriceCard";
 import React from "react";
 
+export const dayInfo ={
+    image: sunIcon,
+    title: 'Päevahoid',
+    price: '15€/12h',
+    listItems: [
+        'Lorem ipsum',
+        'Lorem ipsum',
+        'Lorem ipsum',
+        'Lorem ipsum',
+        'Lorem ipsum'
+    ]
+};
+
+export const nightInfo ={
+    image: moonIcon,
+    title: 'Hotell',
+    price: '40€/24h',
+    listItems: [
+        'Lorem ipsum',
+        'Lorem ipsum',
+        'Lorem ipsum',
+        'Lorem ipsum',
+    ]
+};
+
 const Kodu: React.FC = () => {
     const flexBetween = "flex items-center justify-between";
-
-    const dayInfo ={
-        image: sunIcon,
-        title: 'Päevahoid',
-        price: '15€/12h',
-        listItems: [
-            'Lorem ipsum',
-            'Lorem ipsum',
-            'Lorem ipsum',
-            'Lorem ipsum',
-            'Lorem ipsum'
-        ]
-    };
-
-    const nightInfo ={
-        image: moonIcon,
-        title: 'Hotell',
-        price: '40€/24h',
-        listItems: [
-            'Lorem ipsum',
-            'Lorem ipsum',
-            'Lorem ipsum',
-            'Lorem ipsum',
-        ]
-    };
     
     return (
         <>

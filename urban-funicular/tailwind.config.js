@@ -28,6 +28,7 @@ export default {
       gridTemplateRows: {
         // Simple 2 row grid
         '2': '7fr 1fr',
+        'custom2': '1fr 1fr'
       }
     },
   },

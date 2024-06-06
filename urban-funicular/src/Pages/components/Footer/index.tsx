@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 const Footer = () => {
     
     return (
-        <footer className="bg-blue-50 pt-8 pb-12">
+        <footer className="bottom-0 bg-blue-50 pt-8 pb-12 w-full">
             <div className="justify-between mx-auto w-8/12 tablet:flex">
                 <div className="flex flex-col gap-1 mt-16 basis-1/2 tablet:mt-0">
                     <h1 className="text-2xl">Koertehotell</h1>
