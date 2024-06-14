@@ -29,6 +29,9 @@ export default {
         // Simple 2 row grid
         '2': '7fr 1fr',
         'custom2': '1fr 1fr'
+      },
+      backgroundImage: {
+        'custom-bg': "url('/src/assets/taustakujundus.png')"
       }
     },
   },

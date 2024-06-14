@@ -11,7 +11,7 @@ const Navbar = () => {
   return (
     <nav>
         <div
-        className={`${flexBetween} fixed top-0 z-30 shadow-lg bg-pink-100 w-full py-5`}
+        className={`${flexBetween} fixed top-0 z-40 shadow-lg bg-pink-100 w-full py-5`}
       >
         <div className={`${flexBetween} mx-auto w-8/12`}>
             <div className={`${flexBetween} w-full`}>
@@ -28,9 +28,6 @@ const Navbar = () => {
                         <div className={`${flexBetween} font-semibold text-sm`}>
                             <ul className={`${flexBetween} gap-3`}>
                                 <li>
-                                    <NavLink to="/blogi">BLOGI</NavLink>
-                                </li>
-                                <li>
                                     <NavLink to="/meist">MEIST</NavLink>
                                 </li>
                                 <li>
@@ -38,6 +35,9 @@ const Navbar = () => {
                                 </li>
                                 <li>
                                     <NavLink to="/galerii">GALERII</NavLink>
+                                </li>
+                                <li>
+                                    <NavLink to="/blogi">BLOGI</NavLink>
                                 </li>
                             </ul>
                         </div>
@@ -73,9 +73,6 @@ const Navbar = () => {
             <div className={`flex font-semibold text-2xl`}>
                 <ul className={`flex flex-col gap-4 pl-8`}>
                     <li>
-                        <NavLink to="/blogi">BLOGI</NavLink>
-                    </li>
-                    <li>
                         <NavLink to="/meist">MEIST</NavLink>
                     </li>
                     <li>
@@ -83,6 +80,12 @@ const Navbar = () => {
                     </li>
                     <li>
                         <NavLink to="/galerii">GALERII</NavLink>
+                    </li>
+                    <li>
+                        <NavLink to="/blogi">BLOGI</NavLink>
+                    </li>
+                    <li>
+                        <NavLink to="/kontakt">KONTAKT</NavLink>
                     </li>
                 </ul>
             </div>

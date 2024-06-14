@@ -9,6 +9,8 @@ import Kontakt from "./Pages/Kontakt"
 import FooterBar from "./Pages/components/FooterBar"
 import Footer from "./Pages/components/Footer"
 import { useEffect } from "react"
+import dreamCatcher from "/src/assets/dreamcatcher.png";
+import tribalPattern from "/src/assets/pattern.png"
 
 const App = () => {
 
@@ -16,18 +18,23 @@ const App = () => {
 
     useEffect(() => {
         const reloaded = sessionStorage.getItem('reloaded');
-        if (location.pathname === '/blogi' && !reloaded) {
+        if ((location.pathname === '/blogi' || location.pathname === '/kontakt') && !reloaded) {
             sessionStorage.setItem('reloaded', 'true');
             window.location.reload();
-        } else if (location.pathname !== '/blogi') {
+        } else if (location.pathname !== '/blogi' && location.pathname !== '/kontakt') {
             sessionStorage.removeItem('reloaded');
         }
     }, [location]);
 
-
   return (
     <div className='app bg-pink-100'>
       <Navbar />
+      <div className="flex fixed top-0 tablet:left-0 pl-4 z-0">
+        <img src={dreamCatcher} alt="left decoration" />
+      </div>
+      <div className="tablet:flex fixed hidden top-0 right-0 pr-4 z-0">
+        <img src={tribalPattern} alt="right decoration" />
+      </div>
       <Routes>
         <Route path="/" element={<Kodu />} />
         <Route path="/blogi" element={<Blogi />} />

@@ -4,7 +4,7 @@ import InstagramEmbed from "./components/InstagramEmbed";
 const Blogi = () => {
     
     return (
-        <div className="mx-auto pb-6 pt-24 px-4 w-8/12 bg-pink-100">
+        <div className="mx-auto pb-6 pt-24 w-8/12 bg-pink-100">
             <h1 className="flex 
                 items-center 
                 justify-center 
@@ -14,14 +14,15 @@ const Blogi = () => {
                 text-4xl 
                 tablet:text-5xl 
                 desktop:text-5xl 
-                font-semibold">
+                font-semibold
+                z-10">
                 BLOGI
             </h1>
             <div className="grid grid-cols-1 gap-6 pt-4">
                 <div className="flex justify-center">
                     <FacebookPageEmbed href="https://www.facebook.com/facebook" />
                 </div>
-                <div className="flex justify-center">
+                <div className="flex justify-center z-10">
                     <InstagramEmbed url="https://www.instagram.com/instagram/" />
                 </div>
             </div>

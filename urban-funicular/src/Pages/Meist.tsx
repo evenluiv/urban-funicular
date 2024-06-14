@@ -2,13 +2,24 @@ import { NavLink } from "react-router-dom";
 import image0 from "../../src/assets/image0.jpeg";
 import image5 from "../../src/assets/image5.jpeg";
 
-export default function Meist() {
+const Meist = () => {
     const textStyle = "font-semibold text-md/normal tablet:text-xl/normal";
     
     return (
     <>
         <div className={`grid mx-auto pb-6 pt-24 w-8/12 gap-4 laptop:grid-cols-2`}>
             <div className="flex flex-col place-content-end gap-4">
+                <h1 className="flex 
+                items-center 
+                justify-center 
+                text-center 
+                laptop:text-left 
+                laptop:justify-start 
+                text-4xl 
+                tablet:text-5xl 
+                desktop:text-5xl 
+                font-semibold">MEIST
+                </h1>
                 <p className={`${textStyle}`}>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
                 Sed aliquam, quam et consectetur lacinia, lacus arcu imperdiet nibh, et lobortis metus dolor et dui. 
@@ -50,3 +61,5 @@ export default function Meist() {
     </>
     )
 }
+
+export default Meist;

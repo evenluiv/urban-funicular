@@ -6,16 +6,16 @@ const Footer = () => {
         <footer className="bottom-0 bg-blue-50 pt-8 pb-12 w-full">
             <div className="justify-between mx-auto w-8/12 tablet:flex">
                 <div className="flex flex-col gap-1 mt-16 basis-1/2 tablet:mt-0">
-                    <h1 className="text-2xl">Koertehotell</h1>
-                    <p>1, Kose — Ardu</p>
-                    <p>75112, Harju maakond, Kose vald, Sõmeru</p>
-                    <p>+372 5070 6082</p>
-                    <p>koertehotell@koertehotell.ee</p>
-                    <p>© Koertehotell All Rights Reserved</p>
+                    <h1 className="text-2xl z-10">Koertehotell</h1>
+                    <p className="z-10">1, Kose — Ardu <br />
+                    75112, Harju maakond, Kose vald, Sõmeru <br />
+                    +372 5070 6082 <br />
+                    koertehotell@koertehotell.ee
+                    </p>
                 </div>
                 <div className="flex gap-6 mt-16 basis-1/8 phone:mt-0">
-                    <div>
-                        <h4 className="font-bold">
+                    <div className="z-10">
+                        <h4 className="font-bold z-10">
                             <NavLink to="/">Kodu</NavLink>
                         </h4>
                         <ul className="flex flex-col gap-1">
@@ -33,7 +33,7 @@ const Footer = () => {
                             </li>
                         </ul>
                     </div>
-                    <div>
+                    <div className="z-10">
                         <h4 className="font-bold">
                             <NavLink to="/kontakt">Kontakt</NavLink>
                         </h4>
