@@ -1,8 +1,8 @@
 import MyGoogleMaps from "./components/MyGoogleMaps/MyGoogleMaps";
 
 const Kontakt = () => {
-    const apiKey = 'AIzaSyDTR55_DkO-huaSnRYp-a6LxohUI-rLcHw'
-    const mapID = 'a25f2d4538a892c'
+    const apiKey = import.meta.env.VITE_GOOGLE_MAPS_KEY
+    const mapID = import.meta.env.VITE_GOOGLE_MAPS_ID
 
     return (
         <div className="flex flex-col mx-auto pb-6 pt-24 w-8/12 bg-pink-100">
