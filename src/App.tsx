@@ -11,6 +11,7 @@ import Footer from "./Pages/components/Footer"
 import { useEffect } from "react"
 import dreamCatcher from "/src/assets/dreamcatcher.png";
 import tribalPattern from "/src/assets/pattern.png"
+import React from "react"
 
 const App = () => {
 

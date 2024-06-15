@@ -1,3 +1,4 @@
+import React from "react";
 import MyGoogleMaps from "./components/MyGoogleMaps/MyGoogleMaps";
 
 const Kontakt = () => {
