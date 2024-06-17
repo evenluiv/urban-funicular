@@ -11,7 +11,6 @@ import Footer from "./Pages/components/Footer"
 import { useEffect } from "react"
 import dreamCatcher from "/src/assets/dreamcatcher.png";
 import tribalPattern from "/src/assets/pattern.png"
-import React from "react"
 
 const App = () => {
 
@@ -30,10 +29,10 @@ const App = () => {
   return (
     <div className='app bg-pink-100'>
       <Navbar />
-      <div className="flex fixed top-0 tablet:left-0 pl-4 z-0">
+      <div className="flex fixed top-0 tablet:left-0 pl-4 z-0 opacity-60 laptop:opacity-75">
         <img src={dreamCatcher} alt="left decoration" />
       </div>
-      <div className="tablet:flex fixed hidden top-0 right-0 pr-4 z-0">
+      <div className="tablet:flex fixed hidden top-0 right-0 pr-4 z-0 opacity-50">
         <img src={tribalPattern} alt="right decoration" />
       </div>
       <Routes>

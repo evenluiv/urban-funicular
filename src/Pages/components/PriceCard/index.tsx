@@ -23,7 +23,7 @@ const PriceCard: React.FC<CardProps> = (
             <div className="relative">
                 <img
                  src={image} 
-                 alt="sun" 
+                 alt="sun-or-moon" 
                  className="absolute -top-12 left-1/2 transform -translate-x-1/2"
                  />
             </div>

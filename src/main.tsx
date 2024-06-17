@@ -1,15 +1,14 @@
-import React from 'react'
-import ReactDOM from 'react-dom/client'
-import App from './App.tsx'
-import './index.css'
-import { BrowserRouter } from 'react-router-dom'
-import ScrollToTop from "./Pages/components/ScrollToTop"
+import React from 'react';
+import App from './App.tsx';
+import './index.css';
+import { BrowserRouter } from 'react-router-dom';
+import ScrollToTop from "./Pages/components/ScrollToTop";
 
-ReactDOM.createRoot(document.getElementById('root')!).render(
+export const renderApp = () => (
   <React.StrictMode>
     <BrowserRouter>
       <ScrollToTop />
       <App />
     </BrowserRouter>
-  </React.StrictMode>,
-)
+  </React.StrictMode>
+);

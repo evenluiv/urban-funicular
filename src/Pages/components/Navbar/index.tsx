@@ -2,7 +2,6 @@ import { Link, NavLink } from 'react-router-dom';
 import useMediaQuery from '../../../hooks/useMediaQuery';
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/solid";
 import { useState } from 'react';
-import React from 'react';
 
 const Navbar = () => {
     const flexBetween = "flex items-center justify-between";

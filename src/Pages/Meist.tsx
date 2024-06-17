@@ -8,7 +8,7 @@ const Meist = () => {
     return (
     <>
         <div className={`grid mx-auto pb-6 pt-24 w-8/12 gap-4 laptop:grid-cols-2`}>
-            <div className="flex flex-col place-content-end gap-4">
+            <div className="flex flex-col place-content-end gap-4 z-10">
                 <h1 className="flex 
                 items-center 
                 justify-center 
@@ -30,15 +30,15 @@ const Meist = () => {
                 Quisque sollicitudin arcu dui, in pellentesque quam consectetur ac. Etiam pretium sapien justo, non posuere mi lobortis ut.  
                 </p>
             </div>
-            <div className="flex justify-end align-bottom laptop:items-end">
+            <div className="flex justify-end align-bottom laptop:items-end z-10">
                 <img src={image0} alt="image0" className="w-full object-scale-down desktop:w-5/6 rounded-md" />
             </div>
         </div>
         <div className={`grid mx-auto pb-6 w-8/12 gap-4 laptop:grid-cols-2`}>
-            <div className="flex justify-start laptop:items-end">
+            <div className="flex justify-start laptop:items-end z-10">
                 <img src={image5} alt="image5" className="w-full object-scale-down desktop:w-5/6 rounded-md" />
             </div>
-            <div className="flex flex-col place-content-end gap-4">
+            <div className="flex flex-col place-content-end gap-4 z-10">
                 <p className={`${textStyle}`}>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
                 Sed aliquam, quam et consectetur lacinia, lacus arcu imperdiet nibh, et lobortis metus dolor et dui. 
