@@ -1,4 +1,4 @@
-import { Route, Routes, useLocation } from "react-router-dom"
+import { Route, Routes } from "react-router-dom"
 import Navbar from "./Pages/components/Navbar"
 import Blogi from "./Pages/Blogi"
 import Kodu from "./Pages/Kodu/index"
@@ -8,23 +8,10 @@ import Galerii from "./Pages/Galerii"
 import Kontakt from "./Pages/Kontakt"
 import FooterBar from "./Pages/components/FooterBar"
 import Footer from "./Pages/components/Footer"
-import { useEffect } from "react"
 import dreamCatcher from "/src/assets/dreamcatcher.png";
 import tribalPattern from "/src/assets/pattern.png"
 
 const App = () => {
-
-  const location = useLocation();
-
-    useEffect(() => {
-        const reloaded = sessionStorage.getItem('reloaded');
-        if ((location.pathname === '/blogi' || location.pathname === '/kontakt') && !reloaded) {
-            sessionStorage.setItem('reloaded', 'true');
-            window.location.reload();
-        } else if (location.pathname !== '/blogi' && location.pathname !== '/kontakt') {
-            sessionStorage.removeItem('reloaded');
-        }
-    }, [location]);
 
   return (
     <div className='app bg-pink-100'>
