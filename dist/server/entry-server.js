@@ -1,7 +1,7 @@
 import { jsxs, jsx, Fragment } from "react/jsx-runtime";
 import { renderToString } from "react-dom/server";
 import React, { useState, useEffect, useRef } from "react";
-import { Link, NavLink, useLocation, Routes, Route, BrowserRouter } from "react-router-dom";
+import { Link, NavLink, Routes, Route, useLocation, BrowserRouter } from "react-router-dom";
 import { Bars3Icon, XMarkIcon, ArrowLeftIcon, ArrowRightIcon } from "@heroicons/react/24/solid";
 import { useSwipeable } from "react-swipeable";
 import { StaticRouter } from "react-router-dom/server.mjs";
@@ -540,16 +540,6 @@ const Footer = () => {
 const dreamCatcher = "/assets/dreamcatcher-DarQS9GF.png";
 const tribalPattern = "/assets/pattern-DETJTGaC.png";
 const App = () => {
-  const location = useLocation();
-  useEffect(() => {
-    const reloaded = sessionStorage.getItem("reloaded");
-    if ((location.pathname === "/blogi" || location.pathname === "/kontakt") && !reloaded) {
-      sessionStorage.setItem("reloaded", "true");
-      window.location.reload();
-    } else if (location.pathname !== "/blogi" && location.pathname !== "/kontakt") {
-      sessionStorage.removeItem("reloaded");
-    }
-  }, [location]);
   return /* @__PURE__ */ jsxs("div", { className: "app bg-pink-100", children: [
     /* @__PURE__ */ jsx(Navbar, {}),
     /* @__PURE__ */ jsx("div", { className: "flex fixed top-0 tablet:left-0 pl-4 z-0 opacity-60 laptop:opacity-75", children: /* @__PURE__ */ jsx("img", { src: dreamCatcher, alt: "left decoration" }) }),
