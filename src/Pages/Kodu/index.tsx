@@ -37,7 +37,7 @@ const Kodu: React.FC = () => {
     return (
         <>
         {/* Hero Section */}
-            <div className={`grid mx-auto pb-6 pt-24 w-8/12 tablet:grid-cols-2`}>
+            <div className={`grid mx-auto pb-6 pt-24 laptop:w-8/12 w-10/12 tablet:grid-cols-2`}>
                 <div className="flex flex-col place-content-end gap-4 pb-4 z-10">
                     <h1 className="text-3xl tablet:text-4xl desktop:text-5xl font-extrabold">PORKUNI</h1>
                     <h1 className="text-3xl tablet:text-4xl desktop:text-5xl font-extrabold">KOERTEHOTELL</h1>
@@ -62,7 +62,7 @@ const Kodu: React.FC = () => {
 
             {/* Content Section */}
             <div className="bg-pink-50 py-1">
-                <div className="grid mx-auto mt-10 pb-6 w-8/12 gap-4 laptop:grid-cols-2 laptop:grid-rows-2">
+                <div className="grid mx-auto mt-10 pb-6 laptop:w-8/12 w-10/12 gap-4 laptop:grid-cols-2 laptop:grid-rows-2">
                     <div className="flex flex-col place-content-end gap-6 z-10">
                         <h1 className="text-4xl tablet:text-5xl desktop:text-5xl font-semibold">Too oma koer puhkama</h1>
                         <p className="text-md tablet:text-lg tablet:font-semibold">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur id nunc fringilla erat semper suscipit eget in lacus. Aliquam dapibus nibh lorem, in venenatis lorem condimentum vitae. Donec sit amet odio vitae nulla viverra accumsan. Aliquam tincidunt non felis a viverra. Cras ullamcorper nisl vestibulum tellus semper, sed molestie turpis cursus. In rutrum iaculis tellus ac tincidunt.</p>
@@ -87,7 +87,7 @@ const Kodu: React.FC = () => {
 
             {/* Price Section */}
             <div className="py-1">
-                <div className="flex flex-col mx-auto my-10 pb-6 w-8/12 gap-20">
+                <div className="flex flex-col mx-auto my-10 pb-6 laptop:w-8/12 w-10/12 gap-20">
                     <h1 className="flex items-center justify-center text-center laptop:text-left laptop:justify-start text-4xl tablet:text-5xl desktop:text-5xl font-semibold z-10">Meie Teenused</h1>
                     <div className="flex flex-col gap-12 laptop:flex-row laptop:gap-4">
                         <PriceCard

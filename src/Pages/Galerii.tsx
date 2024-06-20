@@ -2,7 +2,7 @@ import Gallery from "./components/Gallery";
 
 const Galerii = () => {
     return (
-        <div className="mx-auto pb-6 pt-24 w-8/12 bg-pink-100">
+        <div className="mx-auto pb-6 pt-24 laptop:w-8/12 w-10/12 bg-pink-100">
             <h1 className="flex 
             items-center 
             justify-center 

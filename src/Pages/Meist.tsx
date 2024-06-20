@@ -7,7 +7,7 @@ const Meist = () => {
     
     return (
     <>
-        <div className={`grid mx-auto pb-6 pt-24 w-8/12 gap-4 laptop:grid-cols-2`}>
+        <div className={`grid mx-auto pb-6 pt-24 laptop:w-8/12 w-10/12 gap-4 laptop:grid-cols-2`}>
             <div className="flex flex-col place-content-end gap-4 z-10">
                 <h1 className="flex 
                 items-center 
@@ -34,7 +34,7 @@ const Meist = () => {
                 <img src={image0} alt="image0" className="w-full object-scale-down desktop:w-5/6 rounded-md" />
             </div>
         </div>
-        <div className={`grid mx-auto pb-6 w-8/12 gap-4 laptop:grid-cols-2`}>
+        <div className={`grid mx-auto pb-6 laptop:w-8/12 w-10/12 gap-4 laptop:grid-cols-2`}>
             <div className="flex justify-start laptop:items-end z-10">
                 <img src={image5} alt="image5" className="w-full object-scale-down desktop:w-5/6 rounded-md" />
             </div>

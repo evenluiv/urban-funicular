@@ -108,7 +108,7 @@ const InstagramEmbed = ({ url }) => {
   );
 };
 const Blogi = () => {
-  return /* @__PURE__ */ jsxs("div", { className: "mx-auto pb-6 pt-24 w-8/12 bg-pink-100", children: [
+  return /* @__PURE__ */ jsxs("div", { className: "mx-auto pb-6 pt-24 laptop:w-8/12 w-10/12 bg-pink-100", children: [
     /* @__PURE__ */ jsx("h1", { className: "flex \n                items-center \n                justify-center \n                text-center \n                desktop:text-left \n                desktop:justify-start \n                text-4xl \n                tablet:text-5xl \n                desktop:text-5xl \n                font-semibold\n                z-10", children: "BLOGI" }),
     /* @__PURE__ */ jsxs("div", { className: "grid grid-cols-1 gap-6 pt-4", children: [
       /* @__PURE__ */ jsx("div", { className: "flex justify-center", children: /* @__PURE__ */ jsx(FacebookEmbed, { href: "https://www.facebook.com/facebook" }) }),
@@ -168,7 +168,7 @@ const nightInfo = {
 const Kodu = () => {
   const flexBetween = "flex items-center justify-between";
   return /* @__PURE__ */ jsxs(Fragment, { children: [
-    /* @__PURE__ */ jsxs("div", { className: `grid mx-auto pb-6 pt-24 w-8/12 tablet:grid-cols-2`, children: [
+    /* @__PURE__ */ jsxs("div", { className: `grid mx-auto pb-6 pt-24 laptop:w-8/12 w-10/12 tablet:grid-cols-2`, children: [
       /* @__PURE__ */ jsxs("div", { className: "flex flex-col place-content-end gap-4 pb-4 z-10", children: [
         /* @__PURE__ */ jsx("h1", { className: "text-3xl tablet:text-4xl desktop:text-5xl font-extrabold", children: "PORKUNI" }),
         /* @__PURE__ */ jsx("h1", { className: "text-3xl tablet:text-4xl desktop:text-5xl font-extrabold", children: "KOERTEHOTELL" }),
@@ -180,7 +180,7 @@ const Kodu = () => {
       ] }),
       /* @__PURE__ */ jsx("div", { className: "flex justify-end z-10", children: /* @__PURE__ */ jsx("img", { src: dogCircle, alt: "smallDogCircle", className: "w-full object-scale-down desktop:w-5/6 " }) })
     ] }),
-    /* @__PURE__ */ jsx("div", { className: "bg-pink-50 py-1", children: /* @__PURE__ */ jsxs("div", { className: "grid mx-auto mt-10 pb-6 w-8/12 gap-4 laptop:grid-cols-2 laptop:grid-rows-2", children: [
+    /* @__PURE__ */ jsx("div", { className: "bg-pink-50 py-1", children: /* @__PURE__ */ jsxs("div", { className: "grid mx-auto mt-10 pb-6 laptop:w-8/12 w-10/12 gap-4 laptop:grid-cols-2 laptop:grid-rows-2", children: [
       /* @__PURE__ */ jsxs("div", { className: "flex flex-col place-content-end gap-6 z-10", children: [
         /* @__PURE__ */ jsx("h1", { className: "text-4xl tablet:text-5xl desktop:text-5xl font-semibold", children: "Too oma koer puhkama" }),
         /* @__PURE__ */ jsx("p", { className: "text-md tablet:text-lg tablet:font-semibold", children: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur id nunc fringilla erat semper suscipit eget in lacus. Aliquam dapibus nibh lorem, in venenatis lorem condimentum vitae. Donec sit amet odio vitae nulla viverra accumsan. Aliquam tincidunt non felis a viverra. Cras ullamcorper nisl vestibulum tellus semper, sed molestie turpis cursus. In rutrum iaculis tellus ac tincidunt." })
@@ -191,7 +191,7 @@ const Kodu = () => {
       ] }),
       /* @__PURE__ */ jsx("div", { className: "grid content-end laptop:col-start-1 laptop:row-start-1 z-10", children: /* @__PURE__ */ jsx("img", { src: image2, alt: "Dogs", className: "w-full rounded-md shadow-lg desktop:w-5/6" }) })
     ] }) }),
-    /* @__PURE__ */ jsx("div", { className: "py-1", children: /* @__PURE__ */ jsxs("div", { className: "flex flex-col mx-auto my-10 pb-6 w-8/12 gap-20", children: [
+    /* @__PURE__ */ jsx("div", { className: "py-1", children: /* @__PURE__ */ jsxs("div", { className: "flex flex-col mx-auto my-10 pb-6 laptop:w-8/12 w-10/12 gap-20", children: [
       /* @__PURE__ */ jsx("h1", { className: "flex items-center justify-center text-center laptop:text-left laptop:justify-start text-4xl tablet:text-5xl desktop:text-5xl font-semibold z-10", children: "Meie Teenused" }),
       /* @__PURE__ */ jsxs("div", { className: "flex flex-col gap-12 laptop:flex-row laptop:gap-4", children: [
         /* @__PURE__ */ jsx(
@@ -221,14 +221,14 @@ const image5 = "/assets/image5-kxw6qmfG.jpeg";
 const Meist = () => {
   const textStyle = "font-semibold text-md/normal tablet:text-xl/normal";
   return /* @__PURE__ */ jsxs(Fragment, { children: [
-    /* @__PURE__ */ jsxs("div", { className: `grid mx-auto pb-6 pt-24 w-8/12 gap-4 laptop:grid-cols-2`, children: [
+    /* @__PURE__ */ jsxs("div", { className: `grid mx-auto pb-6 pt-24 laptop:w-8/12 w-10/12 gap-4 laptop:grid-cols-2`, children: [
       /* @__PURE__ */ jsxs("div", { className: "flex flex-col place-content-end gap-4 z-10", children: [
         /* @__PURE__ */ jsx("h1", { className: "flex \n                items-center \n                justify-center \n                text-center \n                laptop:text-left \n                laptop:justify-start \n                text-4xl \n                tablet:text-5xl \n                desktop:text-5xl \n                font-semibold", children: "MEIST" }),
         /* @__PURE__ */ jsx("p", { className: `${textStyle}`, children: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed aliquam, quam et consectetur lacinia, lacus arcu imperdiet nibh, et lobortis metus dolor et dui. Praesent viverra nibh vitae ligula viverra, et molestie erat ultricies. Aenean vel auctor ipsum. Nunc at lectus scelerisque, euismod turpis id, pretium erat. Aliquam eget sodales nisl, in suscipit purus. Vivamus lacinia placerat velit. Ut viverra vitae felis non aliquam. Quisque imperdiet tempus lorem, ac dignissim orci fermentum cursus. Sed facilisis gravida felis sed condimentum. Quisque sollicitudin arcu dui, in pellentesque quam consectetur ac. Etiam pretium sapien justo, non posuere mi lobortis ut." })
       ] }),
       /* @__PURE__ */ jsx("div", { className: "flex justify-end align-bottom laptop:items-end z-10", children: /* @__PURE__ */ jsx("img", { src: image0, alt: "image0", className: "w-full object-scale-down desktop:w-5/6 rounded-md" }) })
     ] }),
-    /* @__PURE__ */ jsxs("div", { className: `grid mx-auto pb-6 w-8/12 gap-4 laptop:grid-cols-2`, children: [
+    /* @__PURE__ */ jsxs("div", { className: `grid mx-auto pb-6 laptop:w-8/12 w-10/12 gap-4 laptop:grid-cols-2`, children: [
       /* @__PURE__ */ jsx("div", { className: "flex justify-start laptop:items-end z-10", children: /* @__PURE__ */ jsx("img", { src: image5, alt: "image5", className: "w-full object-scale-down desktop:w-5/6 rounded-md" }) }),
       /* @__PURE__ */ jsxs("div", { className: "flex flex-col place-content-end gap-4 z-10", children: [
         /* @__PURE__ */ jsx("p", { className: `${textStyle}`, children: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed aliquam, quam et consectetur lacinia, lacus arcu imperdiet nibh, et lobortis metus dolor et dui. Praesent viverra nibh vitae ligula viverra, et molestie erat ultricies. Aenean vel auctor ipsum. Nunc at lectus scelerisque, euismod turpis id, pretium erat. Aliquam eget sodales nisl, in suscipit purus. Vivamus lacinia placerat velit. Ut viverra vitae felis non aliquam. Quisque imperdiet tempus lorem, ac dignissim orci fermentum cursus. Sed facilisis gravida felis sed condimentum. Quisque sollicitudin arcu dui, in pellentesque quam consectetur ac. Etiam pretium sapien justo, non posuere mi lobortis ut." }),
@@ -250,7 +250,7 @@ const Tingimused = [
   "Lorem ipsum do lor sit amet, consectetur adipiscing elit."
 ];
 const Hinnakiri = () => {
-  return /* @__PURE__ */ jsx(Fragment, { children: /* @__PURE__ */ jsxs("div", { className: "flex flex-col mx-auto mb-20 pb-8 pt-24 w-8/12 gap-4", children: [
+  return /* @__PURE__ */ jsx(Fragment, { children: /* @__PURE__ */ jsxs("div", { className: "flex flex-col mx-auto mb-20 pb-8 pt-24 laptop:w-8/12 w-10/12 gap-4", children: [
     /* @__PURE__ */ jsx("h1", { className: "flex \n                items-center \n                justify-center \n                text-center \n                laptop:text-left \n                laptop:justify-start \n                text-4xl \n                tablet:text-5xl \n                desktop:text-5xl \n                font-semibold", children: "MEIE TEENUSED" }),
     /* @__PURE__ */ jsxs("div", { className: "flex flex-col items-center gap-4 pb-10 z-10", children: [
       /* @__PURE__ */ jsx("h2", { className: "text-2xl", children: "Tingimused:" }),
@@ -379,7 +379,7 @@ const Gallery = () => {
   ] });
 };
 const Galerii = () => {
-  return /* @__PURE__ */ jsxs("div", { className: "mx-auto pb-6 pt-24 w-8/12 bg-pink-100", children: [
+  return /* @__PURE__ */ jsxs("div", { className: "mx-auto pb-6 pt-24 laptop:w-8/12 w-10/12 bg-pink-100", children: [
     /* @__PURE__ */ jsx("h1", { className: "flex \n            items-center \n            justify-center \n            text-center \n            laptop:text-left \n            laptop:justify-start \n            text-4xl \n            tablet:text-5xl \n            desktop:text-5xl \n            font-semibold", children: "GALERII" }),
     /* @__PURE__ */ jsx(Gallery, {})
   ] });
@@ -470,7 +470,7 @@ const MyGoogleMaps = ({ apiKey, mapId }) => {
 const Kontakt = () => {
   const apiKey = "AIzaSyDTR55_DkO-huaSnRYp-a6LxohUI-rLcHw";
   const mapID = "a25f2d4538a892c";
-  return /* @__PURE__ */ jsxs("div", { className: "flex flex-col mx-auto pb-6 pt-24 w-8/12 bg-pink-100", children: [
+  return /* @__PURE__ */ jsxs("div", { className: "flex flex-col mx-auto pb-6 pt-24 laptop:w-8/12 w-10/12 bg-pink-100", children: [
     /* @__PURE__ */ jsx("h1", { className: "flex \n                items-center \n                justify-center \n                text-center \n                laptop:text-left \n                laptop:justify-start \n                text-4xl \n                tablet:text-5xl \n                desktop:text-5xl \n                font-semibold\n                z-10", children: "KONTAKT" }),
     /* @__PURE__ */ jsxs("div", { className: "flex flex-col justify-evenly laptop:grid laptop:grid-cols-2 pt-4 gap-8 z-10", children: [
       /* @__PURE__ */ jsxs("div", { className: "flex flex-col w-full gap-2", children: [
@@ -503,7 +503,7 @@ const FooterBar = () => {
   return /* @__PURE__ */ jsx("div", { className: `${flexBetween} bg-blue-100 fixed bottom-0 z-30 w-full`, children: /* @__PURE__ */ jsx("p", { children: "© 2024 Porkuni Koertehotell" }) });
 };
 const Footer = () => {
-  return /* @__PURE__ */ jsx("footer", { className: "bottom-0 bg-blue-50 pt-8 pb-12 w-full", children: /* @__PURE__ */ jsxs("div", { className: "justify-between mx-auto w-8/12 tablet:flex", children: [
+  return /* @__PURE__ */ jsx("footer", { className: "bottom-0 bg-blue-50 pt-8 pb-12 w-full", children: /* @__PURE__ */ jsxs("div", { className: "justify-between mx-auto laptop:w-8/12 w-10/12 tablet:flex", children: [
     /* @__PURE__ */ jsxs("div", { className: "flex flex-col gap-1 mt-16 basis-1/2 tablet:mt-0", children: [
       /* @__PURE__ */ jsx("h1", { className: "text-2xl z-10", children: "Koertehotell" }),
       /* @__PURE__ */ jsxs("p", { className: "z-10", children: [

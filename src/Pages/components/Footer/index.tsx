@@ -4,7 +4,7 @@ const Footer = () => {
     
     return (
         <footer className="bottom-0 bg-blue-50 pt-8 pb-12 w-full">
-            <div className="justify-between mx-auto w-8/12 tablet:flex">
+            <div className="justify-between mx-auto laptop:w-8/12 w-10/12 tablet:flex">
                 <div className="flex flex-col gap-1 mt-16 basis-1/2 tablet:mt-0">
                     <h1 className="text-2xl z-10">Koertehotell</h1>
                     <p className="z-10">1, Kose — Ardu <br />

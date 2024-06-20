@@ -5,7 +5,7 @@ const Kontakt = () => {
     const mapID = import.meta.env.VITE_GOOGLE_MAPS_ID
 
     return (
-        <div className="flex flex-col mx-auto pb-6 pt-24 w-8/12 bg-pink-100">
+        <div className="flex flex-col mx-auto pb-6 pt-24 laptop:w-8/12 w-10/12 bg-pink-100">
             <h1 className="flex 
                 items-center 
                 justify-center 
