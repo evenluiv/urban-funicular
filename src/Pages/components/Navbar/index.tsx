@@ -13,7 +13,7 @@ const Navbar = () => {
         <div
         className={`${flexBetween} fixed top-0 z-40 shadow-lg bg-pink-100 w-full py-5`}
       >
-        <div className={`${flexBetween} mx-auto w-8/12`}>
+        <div className={`${flexBetween} mx-auto laptop:w-8/12 w-10/12`}>
             <div className={`${flexBetween} w-full`}>
                 {/* LEFT SIDE */}
                 <Link to="/" className='font-extrabold tracking-wide text-lg'>
