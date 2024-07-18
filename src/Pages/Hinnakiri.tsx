@@ -2,16 +2,11 @@ import { dayInfo, nightInfo } from "./Kodu";
 import PriceCard from "./components/PriceCard";
 
 const Tingimused = [
-    "Lorem ipsum do lor sit amet, consectetur adipiscing elit.",
-    "Lorem ipsum do lor sit amet, consectetur adipiscing elit.",
-    "Lorem ipsum do lor sit amet, consectetur adipiscing elit.",
-    "Lorem ipsum do lor sit amet, consectetur adipiscing elit.",
-    "Lorem ipsum do lor sit amet, consectetur adipiscing elit.",
-    "Lorem ipsum do lor sit amet, consectetur adipiscing elit.",
-    "Lorem ipsum do lor sit amet, consectetur adipiscing elit.",
-    "Lorem ipsum do lor sit amet, consectetur adipiscing elit.",
-    "Lorem ipsum do lor sit amet, consectetur adipiscing elit.",
-    "Lorem ipsum do lor sit amet, consectetur adipiscing elit.",
+    "kiibistatud",
+    "täiesti terve (võtame vastu ainult neid koeri, kes ei ole teistele nakkusohtlikud)",
+    "vaktsineeritud marutaudi ja koerakatku vastu",
+    "vahetult enne hotelli toomist on tehtud ussi-, kirbu- ja puugitõrje",
+    "vähemalt 6 kuune"
 ]
 
 const Hinnakiri = () => {
@@ -31,8 +26,11 @@ const Hinnakiri = () => {
                 </h1>
                 <div className="flex flex-col items-center gap-4 pb-10 z-10">
                     <h2 className="text-2xl">
-                        Tingimused:
+                        Hotelli Reeglid:
                     </h2>
+                    <h3 className="text-xl">
+                        Enne koera hotelli toomist veenduge, et Teie koer on:
+                    </h3>
                     <ul className="flex flex-col list-disc gap-2 pl-8 text-lg">
                         {Tingimused.map((item, index) => (
                             <li key={index}>{item}</li>

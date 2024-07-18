@@ -11,23 +11,21 @@ export const dayInfo ={
     title: 'Päevahoid',
     price: '15€/12h',
     listItems: [
-        'Lorem ipsum',
-        'Lorem ipsum',
-        'Lorem ipsum',
-        'Lorem ipsum',
-        'Lorem ipsum'
+        'Söötmine',
+        'Jalutamine',
+        'Mängimine',
     ]
 };
 
 export const nightInfo ={
     image: moonIcon,
-    title: 'Hotell',
+    title: 'Ööpäevahoid',
     price: '40€/24h',
     listItems: [
-        'Lorem ipsum',
-        'Lorem ipsum',
-        'Lorem ipsum',
-        'Lorem ipsum',
+        'Majutus hotellitoas',
+        'Söötmine',
+        'Jalutamine',
+        'Mängimine',
     ]
 };
 
