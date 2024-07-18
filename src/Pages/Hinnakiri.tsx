@@ -26,7 +26,7 @@ const Hinnakiri = () => {
                 </h1>
                 <div className="flex flex-col items-center gap-4 pb-10 z-10">
                     <h2 className="text-2xl">
-                        Hotelli Reeglid:
+                        Hotelli Reeglid
                     </h2>
                     <h3 className="text-xl">
                         Enne koera hotelli toomist veenduge, et Teie koer on:
@@ -36,6 +36,9 @@ const Hinnakiri = () => {
                             <li key={index}>{item}</li>
                         ))}
                     </ul>
+                    <h3 className="text-xl">
+                        Me ei võta vastu agressiivseid koeri.
+                    </h3>
                 </div>
                 <div className="flex flex-col gap-12 laptop:flex-row laptop:gap-4">
                     <PriceCard
