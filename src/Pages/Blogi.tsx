@@ -22,14 +22,17 @@ const Blogi: React.FC = () => {
       </h1>
       <div className="grid grid-cols-1 gap-6 pt-4">
         <ErrorBoundary>
-          <Suspense fallback={<div>Loading...</div>}>
+            <Suspense fallback={<div>Loading...</div>}>
             <div className="flex justify-center">
-              <FacebookPageEmbed href="https://www.facebook.com/facebook" />
+            <FacebookPageEmbed href="https://www.facebook.com/facebook" />
             </div>
+            </Suspense>
+            
+            <Suspense fallback={<div>Loading...</div>}>
             <div className="flex justify-center z-10">
               <InstagramEmbed url="https://www.instagram.com/instagram/" />
             </div>
-          </Suspense>
+            </Suspense>
         </ErrorBoundary>
       </div>
     </div>
