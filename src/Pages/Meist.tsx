@@ -2,6 +2,13 @@ import { NavLink } from "react-router-dom";
 import image0 from "../../src/assets/image0.jpeg";
 import image5 from "../../src/assets/image5.jpeg";
 
+const Koerad = [
+    "🐾 pere kõige vanem Bosse, 10 - aastane kuldne retriiveri poiss",
+    "🐾 3-aastane Lordy kuldne retriiveri poiss",
+    "🐾 iiri hundikoer,  2-aastane koeratüdruk Zora",
+    "🐾 iiri hundikoer, 7 - kuune poiss Lucky."
+]
+
 const Meist = () => {
     const textStyle = "font-semibold text-md/normal tablet:text-xl/normal";
     
@@ -21,13 +28,11 @@ const Meist = () => {
                 font-semibold">MEIST
                 </h1>
                 <p className={`${textStyle}`}>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-                Sed aliquam, quam et consectetur lacinia, lacus arcu imperdiet nibh, et lobortis metus dolor et dui. 
-                Praesent viverra nibh vitae ligula viverra, et molestie erat ultricies. 
-                Aenean vel auctor ipsum. Nunc at lectus scelerisque, euismod turpis id, pretium erat. 
-                Aliquam eget sodales nisl, in suscipit purus. Vivamus lacinia placerat velit. Ut viverra vitae felis non aliquam.
-                Quisque imperdiet tempus lorem, ac dignissim orci fermentum cursus. Sed facilisis gravida felis sed condimentum. 
-                Quisque sollicitudin arcu dui, in pellentesque quam consectetur ac. Etiam pretium sapien justo, non posuere mi lobortis ut.  
+                Olen Elis ning avasin koertehotelli Porkunis Lääne-Virumaal, mis on avar ja kaetud puude ning põõsastega. 
+                Siin on koertel mõnus joosta, lustida ja sõbraliku kaaslasega mängida. 
+                Võimalik on jalutada kaPorkuni järve ääres ja metsas. Oma lemmikuid saab hotelli jätta nii päevahoidu kui ka mitmeks nädalaks. 
+                Hotellis on (mitu?)aedikut ning osadesse saab mahutada ka ühe pere mitu koera. 
+                Hotelli perenaisena annan endast parima, et teie koer(ad) saavad toreda vaheldusrikka puhkuse, sel ajal kui peavad pereliikmetes eemal olema.
                 </p>
             </div>
             <div className="flex justify-end align-bottom laptop:items-end z-10">
@@ -40,14 +45,17 @@ const Meist = () => {
             </div>
             <div className="flex flex-col place-content-end gap-4 z-10">
                 <p className={`${textStyle}`}>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-                Sed aliquam, quam et consectetur lacinia, lacus arcu imperdiet nibh, et lobortis metus dolor et dui. 
-                Praesent viverra nibh vitae ligula viverra, et molestie erat ultricies. 
-                Aenean vel auctor ipsum. Nunc at lectus scelerisque, euismod turpis id, pretium erat. 
-                Aliquam eget sodales nisl, in suscipit purus. Vivamus lacinia placerat velit. Ut viverra vitae felis non aliquam.
-                Quisque imperdiet tempus lorem, ac dignissim orci fermentum cursus. Sed facilisis gravida felis sed condimentum. 
-                Quisque sollicitudin arcu dui, in pellentesque quam consectetur ac. Etiam pretium sapien justo, non posuere mi lobortis ut.  
+                    Koertehotelli mõte sai alguse iseenda vajadustest, kuna mul on neli koera, kes on harjunud vabalt suurel alal jooksma. 
+                    Seega soovin pakkuda ka teistele koertele sellist võimalust, kes on minu hoole alla usaldatud.  
                 </p>
+                <p className={`${textStyle}`}>
+                    Saage tuttavaks minu nelja rõõmuallikaga:
+                </p>
+                <ul className="flex flex-col gap-2 text-lg">
+                    {Koerad.map((item, index) => (
+                        <li key={index}>{item}</li>
+                    ))}
+                </ul>
                 <div className="flex justify-center laptop:justify-end">
                     <div className={`flex w-auto justify-center bg-blue-100 py-1 px-5 rounded-md`}>
                         <button>

@@ -3,6 +3,7 @@ import dogCircle from "../../../src/assets/doggo-circle-cropped.png";
 import dogs2 from "../../../src/assets/image2.jpeg";
 import sunIcon from "../../../src/assets/sun-icon.png";
 import moonIcon from "../../../src/assets/moon-icon.png";
+import weekIcon from "../../../src/assets/week-icon.png";
 import PriceCard from "../components/PriceCard";
 import React from "react";
 
@@ -11,9 +12,10 @@ export const dayInfo ={
     title: 'Päevahoid',
     price: '15€/12h',
     listItems: [
+        'Hoiuaeg: 09-21',
         'Söötmine',
         'Jalutamine',
-        'Mängimine',
+        'Mängimine'
     ]
 };
 
@@ -22,10 +24,24 @@ export const nightInfo ={
     title: 'Ööpäevahoid',
     price: '40€/24h',
     listItems: [
+        'Hoiuaeg: 24 tundi',
         'Majutus hotellitoas',
         'Söötmine',
         'Jalutamine',
-        'Mängimine',
+        'Mängimine'
+    ]
+};
+
+export const weekInfo ={
+    image: weekIcon,
+    title: 'Nädalahoid',
+    price: '40€/24h',
+    listItems: [
+        'Hoiuaeg: 7 ööpäeva',
+        'Majutus hotellitoas',
+        'Söötmine',
+        'Jalutamine',
+        'Mängimine'
     ]
 };
 
@@ -99,6 +115,12 @@ const Kodu: React.FC = () => {
                             title={nightInfo.title}
                             price={nightInfo.price}
                             listItems={nightInfo.listItems}
+                        />
+                        <PriceCard
+                            image={weekInfo.image}
+                            title={weekInfo.title}
+                            price={weekInfo.price}
+                            listItems={weekInfo.listItems}
                         />
                     </div>
                 </div>

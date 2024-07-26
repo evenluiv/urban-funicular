@@ -1,12 +1,12 @@
-import { dayInfo, nightInfo } from "./Kodu";
+import { dayInfo, nightInfo, weekInfo } from "./Kodu";
 import PriceCard from "./components/PriceCard";
 
 const Tingimused = [
     "kiibistatud",
     "täiesti terve (võtame vastu ainult neid koeri, kes ei ole teistele nakkusohtlikud)",
     "vaktsineeritud marutaudi ja koerakatku vastu",
-    "vahetult enne hotelli toomist on tehtud ussi-, kirbu- ja puugitõrje",
-    "vähemalt 6 kuune"
+    "vahetult enne hotelli toomist tehtud ussi-, kirbu- ja puugitõrje",
+    "vähemalt 6-kuune"
 ]
 
 const Hinnakiri = () => {
@@ -24,12 +24,12 @@ const Hinnakiri = () => {
                 desktop:text-5xl 
                 font-semibold">MEIE TEENUSED
                 </h1>
-                <div className="flex flex-col items-center gap-4 pb-10 z-10">
+                <div className="flex flex-col items-center gap-4 pb-12 z-10">
                     <h2 className="text-2xl">
                         Hotelli Reeglid
                     </h2>
                     <h3 className="text-xl">
-                        Enne koera hotelli toomist veenduge, et Teie koer on:
+                        Enne koera hotelli toomist veenduge, et teie koer on:
                     </h3>
                     <ul className="flex flex-col list-disc gap-2 pl-8 text-lg">
                         {Tingimused.map((item, index) => (
@@ -37,7 +37,7 @@ const Hinnakiri = () => {
                         ))}
                     </ul>
                     <h3 className="text-xl">
-                        Me ei võta vastu agressiivseid koeri.
+                        Me ei võta vastu agressiivseid koeri
                     </h3>
                 </div>
                 <div className="flex flex-col gap-12 laptop:flex-row laptop:gap-4">
@@ -52,6 +52,12 @@ const Hinnakiri = () => {
                         title={nightInfo.title}
                         price={nightInfo.price}
                         listItems={nightInfo.listItems}
+                    />
+                    <PriceCard
+                        image={weekInfo.image}
+                        title={weekInfo.title}
+                        price={weekInfo.price}
+                        listItems={weekInfo.listItems}
                     />
                 </div>
             </div>
