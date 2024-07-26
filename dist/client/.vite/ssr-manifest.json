@@ -1,5 +1,5 @@
 {
-  "\u0000/home/evenluiv/urban-funicular-1/node_modules/react-dom/cjs/react-dom.production.min.js?commonjs-exports": [
+  "\u0000/home/evenluiv/urban-funicular/node_modules/react-dom/cjs/react-dom.production.min.js?commonjs-exports": [
     "/assets/doggo-circle-cropped-CdTp4XUF.png",
     "/assets/image2-DbSFKxjC.jpeg",
     "/assets/image0-ZaiDQP1P.jpeg",
@@ -22,7 +22,7 @@
     "/assets/dreamcatcher-DarQS9GF.png",
     "/assets/pattern-DETJTGaC.png"
   ],
-  "\u0000/home/evenluiv/urban-funicular-1/node_modules/react-dom/index.js?commonjs-module": [
+  "\u0000/home/evenluiv/urban-funicular/node_modules/react-dom/index.js?commonjs-module": [
     "/assets/doggo-circle-cropped-CdTp4XUF.png",
     "/assets/image2-DbSFKxjC.jpeg",
     "/assets/image0-ZaiDQP1P.jpeg",
@@ -45,7 +45,7 @@
     "/assets/dreamcatcher-DarQS9GF.png",
     "/assets/pattern-DETJTGaC.png"
   ],
-  "\u0000/home/evenluiv/urban-funicular-1/node_modules/react/cjs/react-jsx-runtime.production.min.js?commonjs-exports": [
+  "\u0000/home/evenluiv/urban-funicular/node_modules/react/cjs/react-jsx-runtime.production.min.js?commonjs-exports": [
     "/assets/doggo-circle-cropped-CdTp4XUF.png",
     "/assets/image2-DbSFKxjC.jpeg",
     "/assets/image0-ZaiDQP1P.jpeg",
@@ -68,7 +68,7 @@
     "/assets/dreamcatcher-DarQS9GF.png",
     "/assets/pattern-DETJTGaC.png"
   ],
-  "\u0000/home/evenluiv/urban-funicular-1/node_modules/react/cjs/react.production.min.js?commonjs-exports": [
+  "\u0000/home/evenluiv/urban-funicular/node_modules/react/cjs/react.production.min.js?commonjs-exports": [
     "/assets/doggo-circle-cropped-CdTp4XUF.png",
     "/assets/image2-DbSFKxjC.jpeg",
     "/assets/image0-ZaiDQP1P.jpeg",
@@ -91,7 +91,7 @@
     "/assets/dreamcatcher-DarQS9GF.png",
     "/assets/pattern-DETJTGaC.png"
   ],
-  "\u0000/home/evenluiv/urban-funicular-1/node_modules/react/index.js?commonjs-module": [
+  "\u0000/home/evenluiv/urban-funicular/node_modules/react/index.js?commonjs-module": [
     "/assets/doggo-circle-cropped-CdTp4XUF.png",
     "/assets/image2-DbSFKxjC.jpeg",
     "/assets/image0-ZaiDQP1P.jpeg",
@@ -114,7 +114,7 @@
     "/assets/dreamcatcher-DarQS9GF.png",
     "/assets/pattern-DETJTGaC.png"
   ],
-  "\u0000/home/evenluiv/urban-funicular-1/node_modules/react/jsx-runtime.js?commonjs-module": [
+  "\u0000/home/evenluiv/urban-funicular/node_modules/react/jsx-runtime.js?commonjs-module": [
     "/assets/doggo-circle-cropped-CdTp4XUF.png",
     "/assets/image2-DbSFKxjC.jpeg",
     "/assets/image0-ZaiDQP1P.jpeg",
@@ -137,7 +137,7 @@
     "/assets/dreamcatcher-DarQS9GF.png",
     "/assets/pattern-DETJTGaC.png"
   ],
-  "\u0000/home/evenluiv/urban-funicular-1/node_modules/scheduler/cjs/scheduler.production.min.js?commonjs-exports": [
+  "\u0000/home/evenluiv/urban-funicular/node_modules/scheduler/cjs/scheduler.production.min.js?commonjs-exports": [
     "/assets/doggo-circle-cropped-CdTp4XUF.png",
     "/assets/image2-DbSFKxjC.jpeg",
     "/assets/image0-ZaiDQP1P.jpeg",
@@ -160,7 +160,7 @@
     "/assets/dreamcatcher-DarQS9GF.png",
     "/assets/pattern-DETJTGaC.png"
   ],
-  "\u0000/home/evenluiv/urban-funicular-1/node_modules/scheduler/index.js?commonjs-module": [
+  "\u0000/home/evenluiv/urban-funicular/node_modules/scheduler/index.js?commonjs-module": [
     "/assets/doggo-circle-cropped-CdTp4XUF.png",
     "/assets/image2-DbSFKxjC.jpeg",
     "/assets/image0-ZaiDQP1P.jpeg",
@@ -207,6 +207,29 @@
     "/assets/pattern-DETJTGaC.png"
   ],
   "\u0000vite/modulepreload-polyfill.js": [
+    "/assets/doggo-circle-cropped-CdTp4XUF.png",
+    "/assets/image2-DbSFKxjC.jpeg",
+    "/assets/image0-ZaiDQP1P.jpeg",
+    "/assets/image5-kxw6qmfG.jpeg",
+    "/assets/image1-ClPwGLC_.jpeg",
+    "/assets/image3-BhpnJEs4.jpeg",
+    "/assets/image4-DqVBZm0p.jpeg",
+    "/assets/image6-65qU-6Jc.jpeg",
+    "/assets/image7-DdPQzac2.jpeg",
+    "/assets/image8-lpw4zKNR.jpeg",
+    "/assets/image9-CVd6TUuZ.jpeg",
+    "/assets/image10-BBJfnX9M.jpeg",
+    "/assets/image11-2kCF7xNK.jpeg",
+    "/assets/image12-BLFDHthC.jpeg",
+    "/assets/image13-DgYHfne8.jpeg",
+    "/assets/image14-BT218grO.jpeg",
+    "/assets/image15-PsmQ-eCX.jpeg",
+    "/assets/image16-DkeB2o1h.jpeg",
+    "/assets/image17-CP92k4vi.jpeg",
+    "/assets/dreamcatcher-DarQS9GF.png",
+    "/assets/pattern-DETJTGaC.png"
+  ],
+  "\u0000vite/preload-helper.js": [
     "/assets/doggo-circle-cropped-CdTp4XUF.png",
     "/assets/image2-DbSFKxjC.jpeg",
     "/assets/image0-ZaiDQP1P.jpeg",
@@ -804,7 +827,7 @@
     "/assets/dreamcatcher-DarQS9GF.png",
     "/assets/pattern-DETJTGaC.png"
   ],
-  "src/Pages/components/FacebookEmbed/index.tsx": [
+  "src/Pages/components/ErrorBoundary/index.tsx": [
     "/assets/doggo-circle-cropped-CdTp4XUF.png",
     "/assets/image2-DbSFKxjC.jpeg",
     "/assets/image0-ZaiDQP1P.jpeg",
@@ -826,6 +849,9 @@
     "/assets/image17-CP92k4vi.jpeg",
     "/assets/dreamcatcher-DarQS9GF.png",
     "/assets/pattern-DETJTGaC.png"
+  ],
+  "src/Pages/components/FacebookEmbed/index.tsx": [
+    "/assets/index-Ds5_LrjV.js"
   ],
   "src/Pages/components/Footer/index.tsx": [
     "/assets/doggo-circle-cropped-CdTp4XUF.png",
@@ -943,73 +969,13 @@
     "/assets/pattern-DETJTGaC.png"
   ],
   "src/Pages/components/InstagramEmbed/index.tsx": [
-    "/assets/doggo-circle-cropped-CdTp4XUF.png",
-    "/assets/image2-DbSFKxjC.jpeg",
-    "/assets/image0-ZaiDQP1P.jpeg",
-    "/assets/image5-kxw6qmfG.jpeg",
-    "/assets/image1-ClPwGLC_.jpeg",
-    "/assets/image3-BhpnJEs4.jpeg",
-    "/assets/image4-DqVBZm0p.jpeg",
-    "/assets/image6-65qU-6Jc.jpeg",
-    "/assets/image7-DdPQzac2.jpeg",
-    "/assets/image8-lpw4zKNR.jpeg",
-    "/assets/image9-CVd6TUuZ.jpeg",
-    "/assets/image10-BBJfnX9M.jpeg",
-    "/assets/image11-2kCF7xNK.jpeg",
-    "/assets/image12-BLFDHthC.jpeg",
-    "/assets/image13-DgYHfne8.jpeg",
-    "/assets/image14-BT218grO.jpeg",
-    "/assets/image15-PsmQ-eCX.jpeg",
-    "/assets/image16-DkeB2o1h.jpeg",
-    "/assets/image17-CP92k4vi.jpeg",
-    "/assets/dreamcatcher-DarQS9GF.png",
-    "/assets/pattern-DETJTGaC.png"
+    "/assets/index-CivrGLAO.js"
   ],
   "src/Pages/components/MyGoogleMaps/MyGoogleMaps.tsx": [
-    "/assets/doggo-circle-cropped-CdTp4XUF.png",
-    "/assets/image2-DbSFKxjC.jpeg",
-    "/assets/image0-ZaiDQP1P.jpeg",
-    "/assets/image5-kxw6qmfG.jpeg",
-    "/assets/image1-ClPwGLC_.jpeg",
-    "/assets/image3-BhpnJEs4.jpeg",
-    "/assets/image4-DqVBZm0p.jpeg",
-    "/assets/image6-65qU-6Jc.jpeg",
-    "/assets/image7-DdPQzac2.jpeg",
-    "/assets/image8-lpw4zKNR.jpeg",
-    "/assets/image9-CVd6TUuZ.jpeg",
-    "/assets/image10-BBJfnX9M.jpeg",
-    "/assets/image11-2kCF7xNK.jpeg",
-    "/assets/image12-BLFDHthC.jpeg",
-    "/assets/image13-DgYHfne8.jpeg",
-    "/assets/image14-BT218grO.jpeg",
-    "/assets/image15-PsmQ-eCX.jpeg",
-    "/assets/image16-DkeB2o1h.jpeg",
-    "/assets/image17-CP92k4vi.jpeg",
-    "/assets/dreamcatcher-DarQS9GF.png",
-    "/assets/pattern-DETJTGaC.png"
+    "/assets/MyGoogleMaps-B8z51HQl.js"
   ],
   "src/Pages/components/MyGoogleMaps/loadGoogleMapsScript.ts": [
-    "/assets/doggo-circle-cropped-CdTp4XUF.png",
-    "/assets/image2-DbSFKxjC.jpeg",
-    "/assets/image0-ZaiDQP1P.jpeg",
-    "/assets/image5-kxw6qmfG.jpeg",
-    "/assets/image1-ClPwGLC_.jpeg",
-    "/assets/image3-BhpnJEs4.jpeg",
-    "/assets/image4-DqVBZm0p.jpeg",
-    "/assets/image6-65qU-6Jc.jpeg",
-    "/assets/image7-DdPQzac2.jpeg",
-    "/assets/image8-lpw4zKNR.jpeg",
-    "/assets/image9-CVd6TUuZ.jpeg",
-    "/assets/image10-BBJfnX9M.jpeg",
-    "/assets/image11-2kCF7xNK.jpeg",
-    "/assets/image12-BLFDHthC.jpeg",
-    "/assets/image13-DgYHfne8.jpeg",
-    "/assets/image14-BT218grO.jpeg",
-    "/assets/image15-PsmQ-eCX.jpeg",
-    "/assets/image16-DkeB2o1h.jpeg",
-    "/assets/image17-CP92k4vi.jpeg",
-    "/assets/dreamcatcher-DarQS9GF.png",
-    "/assets/pattern-DETJTGaC.png"
+    "/assets/MyGoogleMaps-B8z51HQl.js"
   ],
   "src/Pages/components/Navbar/index.tsx": [
     "/assets/doggo-circle-cropped-CdTp4XUF.png",
@@ -1587,6 +1553,29 @@
     "/assets/pattern-DETJTGaC.png"
   ],
   "src/assets/sun-icon.png": [
+    "/assets/doggo-circle-cropped-CdTp4XUF.png",
+    "/assets/image2-DbSFKxjC.jpeg",
+    "/assets/image0-ZaiDQP1P.jpeg",
+    "/assets/image5-kxw6qmfG.jpeg",
+    "/assets/image1-ClPwGLC_.jpeg",
+    "/assets/image3-BhpnJEs4.jpeg",
+    "/assets/image4-DqVBZm0p.jpeg",
+    "/assets/image6-65qU-6Jc.jpeg",
+    "/assets/image7-DdPQzac2.jpeg",
+    "/assets/image8-lpw4zKNR.jpeg",
+    "/assets/image9-CVd6TUuZ.jpeg",
+    "/assets/image10-BBJfnX9M.jpeg",
+    "/assets/image11-2kCF7xNK.jpeg",
+    "/assets/image12-BLFDHthC.jpeg",
+    "/assets/image13-DgYHfne8.jpeg",
+    "/assets/image14-BT218grO.jpeg",
+    "/assets/image15-PsmQ-eCX.jpeg",
+    "/assets/image16-DkeB2o1h.jpeg",
+    "/assets/image17-CP92k4vi.jpeg",
+    "/assets/dreamcatcher-DarQS9GF.png",
+    "/assets/pattern-DETJTGaC.png"
+  ],
+  "src/assets/week-icon.png": [
     "/assets/doggo-circle-cropped-CdTp4XUF.png",
     "/assets/image2-DbSFKxjC.jpeg",
     "/assets/image0-ZaiDQP1P.jpeg",

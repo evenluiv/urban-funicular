@@ -1,6 +1,6 @@
 import { jsxs, jsx, Fragment } from "react/jsx-runtime";
 import { renderToString } from "react-dom/server";
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, Component, lazy, Suspense } from "react";
 import { Link, NavLink, Routes, Route, useLocation, BrowserRouter } from "react-router-dom";
 import { Bars3Icon, XMarkIcon, ArrowLeftIcon, ArrowRightIcon } from "@heroicons/react/24/solid";
 import { useSwipeable } from "react-swipeable";
@@ -27,7 +27,7 @@ const Navbar = () => {
       "div",
       {
         className: `${flexBetween} fixed top-0 z-40 shadow-lg bg-pink-100 w-full py-5`,
-        children: /* @__PURE__ */ jsx("div", { className: `${flexBetween} mx-auto w-8/12`, children: /* @__PURE__ */ jsxs("div", { className: `${flexBetween} w-full`, children: [
+        children: /* @__PURE__ */ jsx("div", { className: `${flexBetween} mx-auto laptop:w-8/12 w-10/12`, children: /* @__PURE__ */ jsxs("div", { className: `${flexBetween} w-full`, children: [
           /* @__PURE__ */ jsx(Link, { to: "/", className: "font-extrabold tracking-wide text-lg", children: "KOERTEHOTELL" }),
           /* @__PURE__ */ jsx("div", { className: `${flexBetween}` }),
           isAboveMediumScreens ? /* @__PURE__ */ jsxs("div", { className: `flex justify-end gap-3 w-full`, children: [
@@ -61,65 +61,40 @@ const Navbar = () => {
     ] })
   ] });
 };
-const FacebookEmbed = ({ href }) => {
-  useEffect(() => {
-    const script = document.createElement("script");
-    script.src = "https://connect.facebook.net/et_EE/sdk.js#xfbml=1&version=v10.0";
-    script.async = true;
-    document.body.appendChild(script);
-    return () => {
-      document.body.removeChild(script);
-    };
-  }, []);
-  return /* @__PURE__ */ jsx("div", { className: "fb-container overflow-hidden rounded-md h-[125px] tablet:h-full flex", children: /* @__PURE__ */ jsx(
-    "div",
-    {
-      className: "fb-page",
-      "data-href": href,
-      "data-tabs": "timeline",
-      "data-width": "500",
-      "data-height": "600",
-      "data-small-header": "false",
-      "data-adapt-container-width": "true",
-      "data-hide-cover": "false",
-      "data-show-facepile": "true",
-      "data-lazy": "true"
+class ErrorBoundary extends Component {
+  constructor(props) {
+    super(props);
+    this.state = { hasError: false };
+  }
+  static getDerivedStateFromError() {
+    return { hasError: true };
+  }
+  componentDidCatch(error, errorInfo) {
+    console.error("Error caught by ErrorBoundary:", error, errorInfo);
+  }
+  render() {
+    if (this.state.hasError) {
+      return /* @__PURE__ */ jsx("h1", { children: "Something went wrong." });
     }
-  ) });
-};
-const InstagramEmbed = ({ url }) => {
-  useEffect(() => {
-    const script = document.createElement("script");
-    script.src = "https://www.instagram.com/embed.js";
-    script.async = true;
-    document.body.appendChild(script);
-    return () => {
-      document.body.removeChild(script);
-    };
-  }, []);
-  return /* @__PURE__ */ jsx(
-    "blockquote",
-    {
-      className: "instagram-media bg-white border-0 rounded-md shadow-sm m-1 p-0 w-6/12",
-      "data-instgrm-permalink": url,
-      "data-instgrm-version": "12",
-      children: /* @__PURE__ */ jsx("div", { style: { padding: "16px" }, children: /* @__PURE__ */ jsx("a", { href: url, target: "_blank", rel: "noopener noreferrer", className: "block w-full h-full" }) })
-    }
-  );
-};
+    return this.props.children;
+  }
+}
+const FacebookPageEmbed = lazy(() => import("./assets/index-CC77Crzf.js"));
+const InstagramEmbed = lazy(() => import("./assets/index-DaQsXLCU.js"));
 const Blogi = () => {
   return /* @__PURE__ */ jsxs("div", { className: "mx-auto pb-6 pt-24 laptop:w-8/12 w-10/12 bg-pink-100", children: [
-    /* @__PURE__ */ jsx("h1", { className: "flex \n                items-center \n                justify-center \n                text-center \n                desktop:text-left \n                desktop:justify-start \n                text-4xl \n                tablet:text-5xl \n                desktop:text-5xl \n                font-semibold\n                z-10", children: "BLOGI" }),
-    /* @__PURE__ */ jsxs("div", { className: "grid grid-cols-1 gap-6 pt-4", children: [
-      /* @__PURE__ */ jsx("div", { className: "flex justify-center", children: /* @__PURE__ */ jsx(FacebookEmbed, { href: "https://www.facebook.com/facebook" }) }),
-      /* @__PURE__ */ jsx("div", { className: "flex justify-center z-10", children: /* @__PURE__ */ jsx(InstagramEmbed, { url: "https://www.instagram.com/instagram/" }) })
-    ] })
+    /* @__PURE__ */ jsx("h1", { className: "flex \n        items-center \n        justify-center \n        text-center \n        desktop:text-left \n        desktop:justify-start \n        text-4xl \n        tablet:text-5xl \n        desktop:text-5xl \n        font-semibold\n        z-10", children: "BLOGI" }),
+    /* @__PURE__ */ jsx("div", { className: "grid grid-cols-1 gap-6 pt-4", children: /* @__PURE__ */ jsxs(ErrorBoundary, { children: [
+      /* @__PURE__ */ jsx(Suspense, { fallback: /* @__PURE__ */ jsx("div", { children: "Loading..." }), children: /* @__PURE__ */ jsx("div", { className: "flex justify-center", children: /* @__PURE__ */ jsx(FacebookPageEmbed, { href: "https://www.facebook.com/facebook" }) }) }),
+      /* @__PURE__ */ jsx(Suspense, { fallback: /* @__PURE__ */ jsx("div", { children: "Loading..." }), children: /* @__PURE__ */ jsx("div", { className: "flex justify-center z-10", children: /* @__PURE__ */ jsx(InstagramEmbed, { url: "https://www.instagram.com/instagram/" }) }) })
+    ] }) })
   ] });
 };
 const dogCircle = "/assets/doggo-circle-cropped-CdTp4XUF.png";
 const image2 = "/assets/image2-DbSFKxjC.jpeg";
 const sunIcon = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGAAAABgCAYAAADimHc4AAAACXBIWXMAAAsTAAALEwEAmpwYAAADg0lEQVR4nO2dT08TQRjGJ3rRW9FyM5JoYkVNrD0I6AfzuBz9BkyiJ+VeI+LVRHrQC4KBE6AnUDIf4jGvuAdJd3d2u913Z+d5kichhdKZ38POzp+3xRiKoiiKoiiKoiiKoiiKCkDYMOvYMC+12xEvfGvw1wxBEb5lCPrwLUPQh28Zgj58yxD04VuGoA/fMgR9+JYh6MO3EYdQGzzbDpvQpA0MDEAfGngF6IMDh6AaILy+CrxbACZLwPdl4McIOF0Bzp9dWL6Wx+R78jPjhYvnMIAZwY8XgL0BcL4GuOflLM/5Nrj4HTUEYULTTB3e6gMnT8pDz/LxENi6yQAKwW9eBw4f1Qf+sg8eApvXeAVMhf9xEfi1Oj/4qeU1thc5BP0H//Pt+YO/bLlZ8x5ggK93m4efWl476pvwZEkPfuodvyvBhKbCTn3o68NPLfefqAKQ2U4TN1zn6bNV4G3+7Mh0KoB5TjXdDFPUKAKQRZY2bJfhnMWa6cxhSp0rXFezZcUc+qFOLnzZUNOG7Ao87oUbQuEx4t59fcCuwLuD/BlRW0MohC/bw1V2NV3D/r0GvLoSVgheB+ghDD/OYxhqWwje1QttWPW6elfH6iGUKh2R0yptsM7T+8t+fdIMoXTdzs+RPljnaTneLNO3pkOoVDQl57baYJ2nT5+W61uTIVSuWJPDc22wztMyW6vSxyZCgDUvGIDJCiGZewCVQ+j6EGQbgl85BLmxaYN1nj4ZtRt+pRC6Og21SvBLhxDSQmyyFAb8UiFIhZo2WFfjVkRb4HuH0KXNONsy+N4hSK2mNmBX4N17YcL3CiGEYWjcCxe+VwhHj/UhuwpHkqHAT5XZETn41gbtMvz+RmYAJjTljqMHD/Rhu1jLUsRSIs7CrPkqqNLE7dhKE1PvtGB1LKXxHm01nQzAKpenf7nj18ZOB2AN8OlW8/D5Bo0p09OzlYbeotT3/+OI4gqw/ywl4jIdnBd8mf6+4Zv0/K6G42F94I+GuYssXgE2A4Lsy0itpuxQloUuz5GNNb+tZQ5ByIMg28MCUqatclp1MuWjCuSx/fSjCno+W8oMAAHZhCZtYGAA+tDAK0AfHGIdgtQq8GwHDlM6FkKi3Y+YQ0i02x9zCIl2u2MOIdFub8whJNrtjDmERLt9MYeQaLcr5hAS7fbE/G+s1rXbQVEURVEURVEURVEURVHGQ38AuubmeCMuMP0AAAAASUVORK5CYII=";
 const moonIcon = "data:image/png;base64,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";
+const weekIcon = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGAAAABgCAYAAADimHc4AAAACXBIWXMAAAsTAAALEwEAmpwYAAADg0lEQVR4nO1d3U4TQRjdG3wJa5MiJArRC8uul8Str+AzSZTf+BTGEAqNxfJTjXTVi9q5ENOBTuITNNHu3kEyZqoVEWGh229mlj0nOTdkSb7zne9nZjcBxwEAAAAAAACIsfr2U25tt/FqbTfo9VkPVivvPk6aSrxt8ZCLLdcb3XI9kKfZ6FZ2PtzMejzkUJV2Vmww4Musx0MO1eLnC258z3o85Lig2qRi1uPJnOCyZfFcGeEjdzoquUtRydsPfS+KSp68iHGCo5jfHzWTxvNb837ku4s935vSlnj5ZOpGVHJfhL57rFNwZJkBp81wjyPfW5HF4hh98n1v27TgyDIDTuhukZqgKn+YwLqzxVjB3dmituTTxuMuk838q44dxZ7vyfe3C7GC9yYK/Wepk08dT1hyj3qPH94duQHK2WEEHz6Ylpu5XKzgzVxOdorT5AZoicf3FigM+DpMMI2JwqUFB5Pj5AZoicf3vlAYEA4TTC2fv7TgWj5PboCeeNwegQEJBVd3zhW7/nq7/8xW/pY+A4jjscaAQctvPFs6V/DG3IL2EUQdjzUGDJZedcaV6xtvzlZbpSarxRntS5g6HmsMUEc5daRTgjbv3ZeVp/O/2r+606+0gVidx1Ad8VhjgKK61PwR/R/uTRS0X8So47HKgEHlqZZWc1UtQsVgcrz/Mx2Vrzse6wzIGh0Y4MEA01UYoQPMJyLCCDKfjMgAsQNK18wAxoUExaVzAAO42YKBARwGZHpkOdgBAgaYrkKGDjCfCIYRZD4ZzACt2wFxH8GZ5ufjLlIwoA4D0AEcI0hiBGEHSCzhOpYwTkEcx1CJY6gFFxyWElp3EcsaHRggYIDpKmTogJMk4F1QQiStJhiQEDBApHsJowMSAgYIdEAZH2Qwghh2QIBPkqYvOSwFtG4JZ40ODBAwwHQVMnTASRJwEUuIpNUEAxICBoh0L2F0QELAAIEOKONdEEYQww4I8C7I9CWHpYDWLeGs0YEBAgaYrkJ2nTqgxUXPtCiWFrbFDwoD9o0L4+lgi3dG/6eLW22xaFoYSw+fj96Aw8Mp1u4cWyBOWs6jJv92x6EA450VCwRKm6kmhUOFZrM5xnhny7RIZilbXNRUjsgM+MuEZdVqpgUze3ikKp88+f/uhFZbLKiN3+IizGC1h0o742L+88HB6P9lCQAAAAAAAAAAAAAAAOBcN/wE23sJ6oRXva4AAAAASUVORK5CYII=";
 const PriceCard = ({
   image,
   title,
@@ -147,22 +122,34 @@ const dayInfo = {
   title: "Päevahoid",
   price: "15€/12h",
   listItems: [
-    "Lorem ipsum",
-    "Lorem ipsum",
-    "Lorem ipsum",
-    "Lorem ipsum",
-    "Lorem ipsum"
+    "Hoiuaeg: 09-21",
+    "Söötmine",
+    "Jalutamine",
+    "Mängimine"
   ]
 };
 const nightInfo = {
   image: moonIcon,
-  title: "Hotell",
+  title: "Ööpäevahoid",
   price: "40€/24h",
   listItems: [
-    "Lorem ipsum",
-    "Lorem ipsum",
-    "Lorem ipsum",
-    "Lorem ipsum"
+    "Hoiuaeg: 24 tundi",
+    "Majutus hotellitoas",
+    "Söötmine",
+    "Jalutamine",
+    "Mängimine"
+  ]
+};
+const weekInfo = {
+  image: weekIcon,
+  title: "Nädalahoid",
+  price: "40€/24h",
+  listItems: [
+    "Hoiuaeg: 7 ööpäeva",
+    "Majutus hotellitoas",
+    "Söötmine",
+    "Jalutamine",
+    "Mängimine"
   ]
 };
 const Kodu = () => {
@@ -211,6 +198,15 @@ const Kodu = () => {
             price: nightInfo.price,
             listItems: nightInfo.listItems
           }
+        ),
+        /* @__PURE__ */ jsx(
+          PriceCard,
+          {
+            image: weekInfo.image,
+            title: weekInfo.title,
+            price: weekInfo.price,
+            listItems: weekInfo.listItems
+          }
         )
       ] })
     ] }) })
@@ -218,43 +214,48 @@ const Kodu = () => {
 };
 const image0 = "/assets/image0-ZaiDQP1P.jpeg";
 const image5 = "/assets/image5-kxw6qmfG.jpeg";
+const Koerad = [
+  "🐾 pere kõige vanem Bosse, 10 - aastane kuldne retriiveri poiss",
+  "🐾 3-aastane Lordy kuldne retriiveri poiss",
+  "🐾 iiri hundikoer,  2-aastane koeratüdruk Zora",
+  "🐾 iiri hundikoer, 7 - kuune poiss Lucky."
+];
 const Meist = () => {
   const textStyle = "font-semibold text-md/normal tablet:text-xl/normal";
   return /* @__PURE__ */ jsxs(Fragment, { children: [
     /* @__PURE__ */ jsxs("div", { className: `grid mx-auto pb-6 pt-24 laptop:w-8/12 w-10/12 gap-4 laptop:grid-cols-2`, children: [
       /* @__PURE__ */ jsxs("div", { className: "flex flex-col place-content-end gap-4 z-10", children: [
         /* @__PURE__ */ jsx("h1", { className: "flex \n                items-center \n                justify-center \n                text-center \n                laptop:text-left \n                laptop:justify-start \n                text-4xl \n                tablet:text-5xl \n                desktop:text-5xl \n                font-semibold", children: "MEIST" }),
-        /* @__PURE__ */ jsx("p", { className: `${textStyle}`, children: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed aliquam, quam et consectetur lacinia, lacus arcu imperdiet nibh, et lobortis metus dolor et dui. Praesent viverra nibh vitae ligula viverra, et molestie erat ultricies. Aenean vel auctor ipsum. Nunc at lectus scelerisque, euismod turpis id, pretium erat. Aliquam eget sodales nisl, in suscipit purus. Vivamus lacinia placerat velit. Ut viverra vitae felis non aliquam. Quisque imperdiet tempus lorem, ac dignissim orci fermentum cursus. Sed facilisis gravida felis sed condimentum. Quisque sollicitudin arcu dui, in pellentesque quam consectetur ac. Etiam pretium sapien justo, non posuere mi lobortis ut." })
+        /* @__PURE__ */ jsx("p", { className: `${textStyle}`, children: "Olen Elis ning avasin koertehotelli Porkunis Lääne-Virumaal, mis on avar ja kaetud puude ning põõsastega. Siin on koertel mõnus joosta, lustida ja sõbraliku kaaslasega mängida. Võimalik on jalutada kaPorkuni järve ääres ja metsas. Oma lemmikuid saab hotelli jätta nii päevahoidu kui ka mitmeks nädalaks. Hotellis on (mitu?)aedikut ning osadesse saab mahutada ka ühe pere mitu koera. Hotelli perenaisena annan endast parima, et teie koer(ad) saavad toreda vaheldusrikka puhkuse, sel ajal kui peavad pereliikmetes eemal olema." })
       ] }),
       /* @__PURE__ */ jsx("div", { className: "flex justify-end align-bottom laptop:items-end z-10", children: /* @__PURE__ */ jsx("img", { src: image0, alt: "image0", className: "w-full object-scale-down desktop:w-5/6 rounded-md" }) })
     ] }),
     /* @__PURE__ */ jsxs("div", { className: `grid mx-auto pb-6 laptop:w-8/12 w-10/12 gap-4 laptop:grid-cols-2`, children: [
       /* @__PURE__ */ jsx("div", { className: "flex justify-start laptop:items-end z-10", children: /* @__PURE__ */ jsx("img", { src: image5, alt: "image5", className: "w-full object-scale-down desktop:w-5/6 rounded-md" }) }),
       /* @__PURE__ */ jsxs("div", { className: "flex flex-col place-content-end gap-4 z-10", children: [
-        /* @__PURE__ */ jsx("p", { className: `${textStyle}`, children: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed aliquam, quam et consectetur lacinia, lacus arcu imperdiet nibh, et lobortis metus dolor et dui. Praesent viverra nibh vitae ligula viverra, et molestie erat ultricies. Aenean vel auctor ipsum. Nunc at lectus scelerisque, euismod turpis id, pretium erat. Aliquam eget sodales nisl, in suscipit purus. Vivamus lacinia placerat velit. Ut viverra vitae felis non aliquam. Quisque imperdiet tempus lorem, ac dignissim orci fermentum cursus. Sed facilisis gravida felis sed condimentum. Quisque sollicitudin arcu dui, in pellentesque quam consectetur ac. Etiam pretium sapien justo, non posuere mi lobortis ut." }),
+        /* @__PURE__ */ jsx("p", { className: `${textStyle}`, children: "Koertehotelli mõte sai alguse iseenda vajadustest, kuna mul on neli koera, kes on harjunud vabalt suurel alal jooksma. Seega soovin pakkuda ka teistele koertele sellist võimalust, kes on minu hoole alla usaldatud." }),
+        /* @__PURE__ */ jsx("p", { className: `${textStyle}`, children: "Saage tuttavaks minu nelja rõõmuallikaga:" }),
+        /* @__PURE__ */ jsx("ul", { className: "flex flex-col gap-2 text-lg", children: Koerad.map((item, index) => /* @__PURE__ */ jsx("li", { children: item }, index)) }),
         /* @__PURE__ */ jsx("div", { className: "flex justify-center laptop:justify-end", children: /* @__PURE__ */ jsx("div", { className: `flex w-auto justify-center bg-blue-100 py-1 px-5 rounded-md`, children: /* @__PURE__ */ jsx("button", { children: /* @__PURE__ */ jsx(NavLink, { to: "/kontakt", className: `font-semibold`, children: "KIRJUTA MEILE" }) }) }) })
       ] })
     ] })
   ] });
 };
 const Tingimused = [
-  "Lorem ipsum do lor sit amet, consectetur adipiscing elit.",
-  "Lorem ipsum do lor sit amet, consectetur adipiscing elit.",
-  "Lorem ipsum do lor sit amet, consectetur adipiscing elit.",
-  "Lorem ipsum do lor sit amet, consectetur adipiscing elit.",
-  "Lorem ipsum do lor sit amet, consectetur adipiscing elit.",
-  "Lorem ipsum do lor sit amet, consectetur adipiscing elit.",
-  "Lorem ipsum do lor sit amet, consectetur adipiscing elit.",
-  "Lorem ipsum do lor sit amet, consectetur adipiscing elit.",
-  "Lorem ipsum do lor sit amet, consectetur adipiscing elit.",
-  "Lorem ipsum do lor sit amet, consectetur adipiscing elit."
+  "kiibistatud",
+  "täiesti terve (võtame vastu ainult neid koeri, kes ei ole teistele nakkusohtlikud)",
+  "vaktsineeritud marutaudi ja koerakatku vastu",
+  "vahetult enne hotelli toomist tehtud ussi-, kirbu- ja puugitõrje",
+  "vähemalt 6-kuune"
 ];
 const Hinnakiri = () => {
   return /* @__PURE__ */ jsx(Fragment, { children: /* @__PURE__ */ jsxs("div", { className: "flex flex-col mx-auto mb-20 pb-8 pt-24 laptop:w-8/12 w-10/12 gap-4", children: [
     /* @__PURE__ */ jsx("h1", { className: "flex \n                items-center \n                justify-center \n                text-center \n                laptop:text-left \n                laptop:justify-start \n                text-4xl \n                tablet:text-5xl \n                desktop:text-5xl \n                font-semibold", children: "MEIE TEENUSED" }),
-    /* @__PURE__ */ jsxs("div", { className: "flex flex-col items-center gap-4 pb-10 z-10", children: [
-      /* @__PURE__ */ jsx("h2", { className: "text-2xl", children: "Tingimused:" }),
-      /* @__PURE__ */ jsx("ul", { className: "flex flex-col list-disc gap-2 pl-8 text-lg", children: Tingimused.map((item, index) => /* @__PURE__ */ jsx("li", { children: item }, index)) })
+    /* @__PURE__ */ jsxs("div", { className: "flex flex-col items-center gap-4 pb-12 z-10", children: [
+      /* @__PURE__ */ jsx("h2", { className: "text-2xl", children: "Hotelli Reeglid" }),
+      /* @__PURE__ */ jsx("h3", { className: "text-xl", children: "Enne koera hotelli toomist veenduge, et teie koer on:" }),
+      /* @__PURE__ */ jsx("ul", { className: "flex flex-col list-disc gap-2 pl-8 text-lg", children: Tingimused.map((item, index) => /* @__PURE__ */ jsx("li", { children: item }, index)) }),
+      /* @__PURE__ */ jsx("h3", { className: "text-xl", children: "Me ei võta vastu agressiivseid koeri" })
     ] }),
     /* @__PURE__ */ jsxs("div", { className: "flex flex-col gap-12 laptop:flex-row laptop:gap-4", children: [
       /* @__PURE__ */ jsx(
@@ -273,6 +274,15 @@ const Hinnakiri = () => {
           title: nightInfo.title,
           price: nightInfo.price,
           listItems: nightInfo.listItems
+        }
+      ),
+      /* @__PURE__ */ jsx(
+        PriceCard,
+        {
+          image: weekInfo.image,
+          title: weekInfo.title,
+          price: weekInfo.price,
+          listItems: weekInfo.listItems
         }
       )
     ] })
@@ -384,94 +394,12 @@ const Galerii = () => {
     /* @__PURE__ */ jsx(Gallery, {})
   ] });
 };
-const loadGoogleMapsScript = (apiKey) => {
-  return new Promise((resolve, reject) => {
-    if (typeof window.google === "object" && typeof window.google.maps === "object") {
-      resolve();
-      return;
-    }
-    const script = document.createElement("script");
-    script.src = `https://maps.googleapis.com/maps/api/js?key=${apiKey}`;
-    script.async = true;
-    script.defer = true;
-    script.onload = () => resolve();
-    script.onerror = (error) => reject(error);
-    document.head.appendChild(script);
-  });
-};
-const containerStyle = {
-  width: "100%",
-  // Set width to 100% to make it responsive
-  height: "400px"
-  // Fixed height
-};
-const center = {
-  lat: 59.45856957805664,
-  lng: 24.8616672746847
-};
-const MyGoogleMaps = ({ apiKey, mapId }) => {
-  const mapRef = useRef(null);
-  const [mapLoaded, setMapLoaded] = useState(false);
-  const [error, setError] = useState(null);
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        if (entries[0].isIntersecting) {
-          loadGoogleMapsScript(apiKey).then(() => setMapLoaded(true)).catch((error2) => {
-            console.error("Error loading Google Maps script:", error2);
-            setError("Error loading Google Maps script.");
-          });
-          observer.disconnect();
-        }
-      },
-      { threshold: 0.1 }
-    );
-    if (mapRef.current) {
-      observer.observe(mapRef.current);
-    }
-    return () => {
-      if (mapRef.current) {
-        observer.unobserve(mapRef.current);
-      }
-    };
-  }, [apiKey]);
-  useEffect(() => {
-    if (mapLoaded && mapRef.current) {
-      const initializeMap = async () => {
-        try {
-          const { Map } = await google.maps.importLibrary("maps");
-          const { AdvancedMarkerElement } = await google.maps.importLibrary("marker");
-          if (mapRef.current) {
-            const map = new Map(mapRef.current, {
-              center,
-              zoom: 16,
-              mapId
-              // Set the Map ID here
-            });
-            new AdvancedMarkerElement({
-              position: center,
-              map,
-              title: "Porkuni KoerteHotell"
-            });
-          }
-        } catch (err) {
-          console.error("Error initializing Google Map:", err);
-          setError("Error initializing Google Map.");
-        }
-      };
-      initializeMap();
-    }
-  }, [mapLoaded, mapId]);
-  return /* @__PURE__ */ jsx("div", { children: error ? /* @__PURE__ */ jsxs("div", { children: [
-    "Error: ",
-    error
-  ] }) : /* @__PURE__ */ jsx("div", { ref: mapRef, className: "map-container", style: containerStyle }) });
-};
+const MyGoogleMaps = lazy(() => import("./assets/MyGoogleMaps-NJUz-7ya.js"));
 const Kontakt = () => {
   const apiKey = "AIzaSyDTR55_DkO-huaSnRYp-a6LxohUI-rLcHw";
   const mapID = "a25f2d4538a892c";
   return /* @__PURE__ */ jsxs("div", { className: "flex flex-col mx-auto pb-6 pt-24 laptop:w-8/12 w-10/12 bg-pink-100", children: [
-    /* @__PURE__ */ jsx("h1", { className: "flex \n                items-center \n                justify-center \n                text-center \n                laptop:text-left \n                laptop:justify-start \n                text-4xl \n                tablet:text-5xl \n                desktop:text-5xl \n                font-semibold\n                z-10", children: "KONTAKT" }),
+    /* @__PURE__ */ jsx("h1", { className: "flex \n        items-center \n        justify-center \n        text-center \n        laptop:text-left \n        laptop:justify-start \n        text-4xl \n        tablet:text-5xl \n        desktop:text-5xl \n        font-semibold\n        z-10", children: "KONTAKT" }),
     /* @__PURE__ */ jsxs("div", { className: "flex flex-col justify-evenly laptop:grid laptop:grid-cols-2 pt-4 gap-8 z-10", children: [
       /* @__PURE__ */ jsxs("div", { className: "flex flex-col w-full gap-2", children: [
         /* @__PURE__ */ jsx("h1", { className: "text-xl", children: "Koertehotell" }),
@@ -484,7 +412,7 @@ const Kontakt = () => {
           /* @__PURE__ */ jsx("br", {}),
           "koertehotell@koertehotell.ee"
         ] }),
-        /* @__PURE__ */ jsx(MyGoogleMaps, { apiKey, mapId: mapID })
+        /* @__PURE__ */ jsx(ErrorBoundary, { children: /* @__PURE__ */ jsx(Suspense, { fallback: /* @__PURE__ */ jsx("div", { children: "Loading..." }), children: /* @__PURE__ */ jsx(MyGoogleMaps, { apiKey, mapId: mapID }) }) })
       ] }),
       /* @__PURE__ */ jsxs("div", { className: "flex flex-col gap-4", children: [
         /* @__PURE__ */ jsx("h1", { className: "text-xl", children: "Kirjuta Meile" }),
