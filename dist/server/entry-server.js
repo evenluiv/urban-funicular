@@ -367,6 +367,29 @@ const MyGoogleMaps = lazy(() => import("./assets/MyGoogleMaps-NJUz-7ya.js"));
 const Kontakt = () => {
   const apiKey = "AIzaSyDTR55_DkO-huaSnRYp-a6LxohUI-rLcHw";
   const mapID = "a25f2d4538a892c";
+  const onSubmit = (event) => {
+    event.preventDefault();
+    const nameInput = document.getElementById("name");
+    const emailInput = document.getElementById("email");
+    const periodInput = document.getElementById("period");
+    const contentInput = document.getElementById("content");
+    const name = nameInput.value.trim();
+    const email = emailInput.value.trim();
+    const period = periodInput.value.trim();
+    const content = contentInput.value.trim();
+    if (!name || !email || !period || !content) {
+      alert("Please fill in all fields before submitting.");
+      return;
+    }
+    alert(`Form submitted successfully!
+
+Name: ${name}
+Email: ${email}
+Period of Stay: ${period}
+Content: ${content}`);
+    const form = document.getElementById("stayRequestForm");
+    form.reset();
+  };
   return /* @__PURE__ */ jsxs("div", { className: "flex flex-col mx-auto pb-6 pt-24 laptop:w-8/12 w-10/12 bg-pink-100", children: [
     /* @__PURE__ */ jsx("h1", { className: "flex \n        items-center \n        justify-center \n        text-center \n        laptop:text-left \n        laptop:justify-start \n        text-4xl \n        tablet:text-5xl \n        desktop:text-5xl \n        font-semibold\n        z-10", children: "KONTAKT" }),
     /* @__PURE__ */ jsxs("div", { className: "flex flex-col justify-evenly laptop:grid laptop:grid-cols-2 pt-4 gap-8 z-10", children: [
@@ -385,11 +408,17 @@ const Kontakt = () => {
       ] }),
       /* @__PURE__ */ jsxs("div", { className: "flex flex-col gap-4", children: [
         /* @__PURE__ */ jsx("h1", { className: "text-xl", children: "Kirjuta Meile" }),
-        /* @__PURE__ */ jsxs("form", { action: "", className: "flex flex-col h-full gap-3", children: [
-          /* @__PURE__ */ jsx("input", { type: "text", id: "nimi", placeholder: "Nimi...", className: "rounded-full px-3 h-10 w-1/2 shadow-lg" }),
-          /* @__PURE__ */ jsx("input", { type: "text", id: "eMail", placeholder: "E-mail...", className: "rounded-full px-3 h-10 w-1/2 shadow-lg" }),
-          /* @__PURE__ */ jsx("textarea", { id: "sisu", placeholder: "Kirja sisu...", className: "rounded-md px-3 pt-3 h-60 laptop:h-full shadow-lg" }),
-          /* @__PURE__ */ jsx("button", { className: "h-10 rounded-full border-black border-solid border-2 bg-blue-100 shadow-lg", children: "Saada" })
+        /* @__PURE__ */ jsxs("form", { id: "stayRequestForm", className: "flex flex-col h-full gap-3", onSubmit, children: [
+          /* @__PURE__ */ jsx("div", { className: "form-group", children: /* @__PURE__ */ jsx("input", { type: "text", id: "nimi", placeholder: "Nimi...", className: "rounded-full px-3 h-10 w-1/2 shadow-lg" }) }),
+          /* @__PURE__ */ jsx("div", { className: "form-group", children: /* @__PURE__ */ jsx("input", { type: "text", id: "eMail", placeholder: "E-mail...", className: "rounded-full px-3 h-10 w-1/2 shadow-lg" }) }),
+          /* @__PURE__ */ jsxs("div", { className: "form-group flex flex-row items-center gap-4", children: [
+            /* @__PURE__ */ jsx("label", { htmlFor: "periodStart", children: "Alguskuupäev:" }),
+            /* @__PURE__ */ jsx("input", { type: "date", name: "begin", id: "periodStart", className: "rounded-full px-3 h-10 w-1/3 shadow-lg", required: true }),
+            /* @__PURE__ */ jsx("label", { htmlFor: "periodEnd ", children: "Lõppkuupäev:" }),
+            /* @__PURE__ */ jsx("input", { type: "date", name: "begin", id: "periodEnd", className: "rounded-full px-3 h-10 w-1/3 shadow-lg", required: true })
+          ] }),
+          /* @__PURE__ */ jsx("div", { className: "form-group h-60 laptop:h-full", children: /* @__PURE__ */ jsx("textarea", { id: "sisu", placeholder: "Kirja sisu...", className: "rounded-md px-3 pt-3 h-60 w-full laptop:h-full shadow-lg" }) }),
+          /* @__PURE__ */ jsx("div", { className: "form-group", children: /* @__PURE__ */ jsx("button", { type: "submit", className: "h-10 w-full rounded-full border-black border-solid border-2 bg-blue-100 shadow-lg", children: "Saada" }) })
         ] })
       ] })
     ] })
