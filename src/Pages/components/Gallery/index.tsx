@@ -1,6 +1,3 @@
-import { useState } from "react";
-import ImageGallery from "./ImageGallery";
-import ImageModal from "./ImageModal";
 import image0 from "/src/assets/image0.jpeg";
 import image1 from "/src/assets/image1.jpeg";
 import image2 from "/src/assets/image2.jpeg";
@@ -19,6 +16,7 @@ import image14 from "/src/assets/image14.jpeg";
 import image15 from "/src/assets/image15.jpeg";
 import image16 from "/src/assets/image16.jpeg";
 import image17 from "/src/assets/image17.jpeg";
+import Fancybox from "./FancyBox";
 
 const Gallery: React.FC = () => {
     
@@ -43,40 +41,25 @@ const Gallery: React.FC = () => {
     image17
   ];
 
-  const [selectedImageIndex, setSelectedImageIndex] = useState<number | null>(null);
-
-  const openModal = (index: number) => {
-    setSelectedImageIndex(index);
-  };
-
-  const closeModal = () => {
-    setSelectedImageIndex(null);
-  };
-
-  const showNextImage = () => {
-    if (selectedImageIndex !== null) {
-      setSelectedImageIndex((prevIndex) => (prevIndex! + 1) % images.length);
-    }
-  };
-
-  const showPrevImage = () => {
-    if (selectedImageIndex !== null) {
-      setSelectedImageIndex((prevIndex) => (prevIndex! - 1 + images.length) % images.length);
-    }
-  };
-
   return (
-    <div className="flex flex-col items-center justify-center">
-      <ImageGallery images={images} onImageClick={openModal} />
-      {selectedImageIndex !== null && (
-        <ImageModal
-          images={images}
-          selectedIndex={selectedImageIndex}
-          onClose={closeModal}
-          onNext={showNextImage}
-          onPrev={showPrevImage}
-        />
-      )}
+    <div className="pt-4">
+      <Fancybox
+        options={{
+          Carousel: {
+            infinite: false,
+          }
+        }}
+      >
+        {images.map((src) => (
+          <a className="z-10" data-fancybox="gallery" href={src}>
+            <img
+            src={src}
+            alt={`Image ${src}`}
+            className="cursor-pointer object-cover w-full h-48 rounded-md shadow-sm"
+            />
+          </a>
+        ))}
+      </Fancybox>
     </div>
   );
 };

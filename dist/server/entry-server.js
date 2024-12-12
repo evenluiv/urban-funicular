@@ -1,9 +1,9 @@
 import { jsxs, jsx, Fragment } from "react/jsx-runtime";
 import { renderToString } from "react-dom/server";
-import React, { useState, useEffect, Component, lazy, Suspense } from "react";
+import React, { useState, useEffect, Component, lazy, Suspense, useRef } from "react";
 import { Link, NavLink, Routes, Route, useLocation, BrowserRouter } from "react-router-dom";
-import { Bars3Icon, XMarkIcon, ArrowLeftIcon, ArrowRightIcon } from "@heroicons/react/24/solid";
-import { useSwipeable } from "react-swipeable";
+import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/solid";
+import { Fancybox as Fancybox$1 } from "@fancyapps/ui";
 import { StaticRouter } from "react-router-dom/server.mjs";
 const useMediaQuery = (query) => {
   const [matches, setMatches] = useState(false);
@@ -288,39 +288,6 @@ const Hinnakiri = () => {
     ] })
   ] }) });
 };
-const ImageGallery = ({ images, onImageClick }) => {
-  return /* @__PURE__ */ jsx("div", { className: "grid grid-cols-1 tablet:grid-cols-2 laptop:grid-cols-3 desktop:grid-cols-4 gap-4 py-4 z-10", children: images.map((src, index) => /* @__PURE__ */ jsx(
-    "img",
-    {
-      src,
-      alt: `Image ${index}`,
-      onClick: () => onImageClick(index),
-      className: "cursor-pointer object-cover w-full h-48 rounded-md shadow-sm hover:shadow-md transition-shadow duration-200"
-    },
-    index
-  )) });
-};
-const ImageModal = ({ images, selectedIndex, onClose, onNext, onPrev }) => {
-  const handlers = useSwipeable({
-    onSwipedLeft: onNext,
-    onSwipedRight: onPrev,
-    trackMouse: true
-  });
-  return /* @__PURE__ */ jsx("div", { className: "fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50", onClick: onClose, children: /* @__PURE__ */ jsxs(
-    "div",
-    {
-      className: "relative bg-white p-4 rounded-md shadow-lg",
-      onClick: (e) => e.stopPropagation(),
-      ...handlers,
-      children: [
-        /* @__PURE__ */ jsx(XMarkIcon, { className: "absolute top-5 right-5 h-6 w-6 bg-white rounded-full", onClick: onClose }),
-        /* @__PURE__ */ jsx(ArrowLeftIcon, { className: "absolute left-2 h-8 w-8 top-1/2 transform -translate-y-1/2 text-white bg-gray-500 bg-opacity-75 rounded-full p-2", onClick: onPrev }),
-        /* @__PURE__ */ jsx("img", { src: images[selectedIndex], alt: `Image ${selectedIndex}`, className: "max-w-full max-h-[80vh] rounded-md" }),
-        /* @__PURE__ */ jsx(ArrowRightIcon, { className: "absolute right-2 h-8 w-8 top-1/2 transform -translate-y-1/2 text-white bg-gray-500 bg-opacity-75 rounded-full p-2", onClick: onNext })
-      ]
-    }
-  ) });
-};
 const image1 = "/assets/image1-ClPwGLC_.jpeg";
 const image3 = "/assets/image3-BhpnJEs4.jpeg";
 const image4 = "/assets/image4-DqVBZm0p.jpeg";
@@ -336,6 +303,20 @@ const image14 = "/assets/image14-BT218grO.jpeg";
 const image15 = "/assets/image15-PsmQ-eCX.jpeg";
 const image16 = "/assets/image16-DkeB2o1h.jpeg";
 const image17 = "/assets/image17-CP92k4vi.jpeg";
+function Fancybox(props) {
+  const containerRef = useRef(null);
+  useEffect(() => {
+    const container = containerRef.current;
+    const delegate = props.delegate || "[data-fancybox]";
+    const options = props.options || {};
+    Fancybox$1.bind(container, delegate, options);
+    return () => {
+      Fancybox$1.unbind(container);
+      Fancybox$1.close();
+    };
+  });
+  return /* @__PURE__ */ jsx("div", { className: "grid grid-cols-2 laptop:grid-cols-3 gap-4", ref: containerRef, children: props.children });
+}
 const Gallery = () => {
   const images = [
     image0,
@@ -357,36 +338,24 @@ const Gallery = () => {
     image16,
     image17
   ];
-  const [selectedImageIndex, setSelectedImageIndex] = useState(null);
-  const openModal = (index) => {
-    setSelectedImageIndex(index);
-  };
-  const closeModal = () => {
-    setSelectedImageIndex(null);
-  };
-  const showNextImage = () => {
-    if (selectedImageIndex !== null) {
-      setSelectedImageIndex((prevIndex) => (prevIndex + 1) % images.length);
+  return /* @__PURE__ */ jsx("div", { className: "pt-4", children: /* @__PURE__ */ jsx(
+    Fancybox,
+    {
+      options: {
+        Carousel: {
+          infinite: false
+        }
+      },
+      children: images.map((src) => /* @__PURE__ */ jsx("a", { className: "z-10", "data-fancybox": "gallery", href: src, children: /* @__PURE__ */ jsx(
+        "img",
+        {
+          src,
+          alt: `Image ${src}`,
+          className: "cursor-pointer object-cover w-full h-48 rounded-md shadow-sm"
+        }
+      ) }))
     }
-  };
-  const showPrevImage = () => {
-    if (selectedImageIndex !== null) {
-      setSelectedImageIndex((prevIndex) => (prevIndex - 1 + images.length) % images.length);
-    }
-  };
-  return /* @__PURE__ */ jsxs("div", { className: "flex flex-col items-center justify-center", children: [
-    /* @__PURE__ */ jsx(ImageGallery, { images, onImageClick: openModal }),
-    selectedImageIndex !== null && /* @__PURE__ */ jsx(
-      ImageModal,
-      {
-        images,
-        selectedIndex: selectedImageIndex,
-        onClose: closeModal,
-        onNext: showNextImage,
-        onPrev: showPrevImage
-      }
-    )
-  ] });
+  ) });
 };
 const Galerii = () => {
   return /* @__PURE__ */ jsxs("div", { className: "mx-auto pb-6 pt-24 laptop:w-8/12 w-10/12 bg-pink-100", children: [

@@ -275,7 +275,7 @@
     "/assets/dreamcatcher-DarQS9GF.png",
     "/assets/pattern-DETJTGaC.png"
   ],
-  "node_modules/@heroicons/react/24/solid/esm/ArrowLeftIcon.js": [
+  "node_modules/@fancyapps/ui/dist/fancybox/fancybox.css": [
     "/assets/doggo-circle-cropped-CdTp4XUF.png",
     "/assets/image2-DbSFKxjC.jpeg",
     "/assets/image0-ZaiDQP1P.jpeg",
@@ -298,7 +298,7 @@
     "/assets/dreamcatcher-DarQS9GF.png",
     "/assets/pattern-DETJTGaC.png"
   ],
-  "node_modules/@heroicons/react/24/solid/esm/ArrowRightIcon.js": [
+  "node_modules/@fancyapps/ui/dist/index.esm.js": [
     "/assets/doggo-circle-cropped-CdTp4XUF.png",
     "/assets/image2-DbSFKxjC.jpeg",
     "/assets/image0-ZaiDQP1P.jpeg",
@@ -483,29 +483,6 @@
     "/assets/pattern-DETJTGaC.png"
   ],
   "node_modules/react-router/dist/index.js": [
-    "/assets/doggo-circle-cropped-CdTp4XUF.png",
-    "/assets/image2-DbSFKxjC.jpeg",
-    "/assets/image0-ZaiDQP1P.jpeg",
-    "/assets/image5-kxw6qmfG.jpeg",
-    "/assets/image1-ClPwGLC_.jpeg",
-    "/assets/image3-BhpnJEs4.jpeg",
-    "/assets/image4-DqVBZm0p.jpeg",
-    "/assets/image6-65qU-6Jc.jpeg",
-    "/assets/image7-DdPQzac2.jpeg",
-    "/assets/image8-lpw4zKNR.jpeg",
-    "/assets/image9-CVd6TUuZ.jpeg",
-    "/assets/image10-BBJfnX9M.jpeg",
-    "/assets/image11-2kCF7xNK.jpeg",
-    "/assets/image12-BLFDHthC.jpeg",
-    "/assets/image13-DgYHfne8.jpeg",
-    "/assets/image14-BT218grO.jpeg",
-    "/assets/image15-PsmQ-eCX.jpeg",
-    "/assets/image16-DkeB2o1h.jpeg",
-    "/assets/image17-CP92k4vi.jpeg",
-    "/assets/dreamcatcher-DarQS9GF.png",
-    "/assets/pattern-DETJTGaC.png"
-  ],
-  "node_modules/react-swipeable/es/index.js": [
     "/assets/doggo-circle-cropped-CdTp4XUF.png",
     "/assets/image2-DbSFKxjC.jpeg",
     "/assets/image0-ZaiDQP1P.jpeg",
@@ -851,7 +828,7 @@
     "/assets/pattern-DETJTGaC.png"
   ],
   "src/Pages/components/FacebookEmbed/index.tsx": [
-    "/assets/index-Ds5_LrjV.js"
+    "/assets/index-Ijdgjy_x.js"
   ],
   "src/Pages/components/Footer/index.tsx": [
     "/assets/doggo-circle-cropped-CdTp4XUF.png",
@@ -899,30 +876,7 @@
     "/assets/dreamcatcher-DarQS9GF.png",
     "/assets/pattern-DETJTGaC.png"
   ],
-  "src/Pages/components/Gallery/ImageGallery.tsx": [
-    "/assets/doggo-circle-cropped-CdTp4XUF.png",
-    "/assets/image2-DbSFKxjC.jpeg",
-    "/assets/image0-ZaiDQP1P.jpeg",
-    "/assets/image5-kxw6qmfG.jpeg",
-    "/assets/image1-ClPwGLC_.jpeg",
-    "/assets/image3-BhpnJEs4.jpeg",
-    "/assets/image4-DqVBZm0p.jpeg",
-    "/assets/image6-65qU-6Jc.jpeg",
-    "/assets/image7-DdPQzac2.jpeg",
-    "/assets/image8-lpw4zKNR.jpeg",
-    "/assets/image9-CVd6TUuZ.jpeg",
-    "/assets/image10-BBJfnX9M.jpeg",
-    "/assets/image11-2kCF7xNK.jpeg",
-    "/assets/image12-BLFDHthC.jpeg",
-    "/assets/image13-DgYHfne8.jpeg",
-    "/assets/image14-BT218grO.jpeg",
-    "/assets/image15-PsmQ-eCX.jpeg",
-    "/assets/image16-DkeB2o1h.jpeg",
-    "/assets/image17-CP92k4vi.jpeg",
-    "/assets/dreamcatcher-DarQS9GF.png",
-    "/assets/pattern-DETJTGaC.png"
-  ],
-  "src/Pages/components/Gallery/ImageModal.tsx": [
+  "src/Pages/components/Gallery/FancyBox.tsx": [
     "/assets/doggo-circle-cropped-CdTp4XUF.png",
     "/assets/image2-DbSFKxjC.jpeg",
     "/assets/image0-ZaiDQP1P.jpeg",
@@ -969,13 +923,13 @@
     "/assets/pattern-DETJTGaC.png"
   ],
   "src/Pages/components/InstagramEmbed/index.tsx": [
-    "/assets/index-CivrGLAO.js"
+    "/assets/index-Col5YOqz.js"
   ],
   "src/Pages/components/MyGoogleMaps/MyGoogleMaps.tsx": [
-    "/assets/MyGoogleMaps-B8z51HQl.js"
+    "/assets/MyGoogleMaps-roqiDr9B.js"
   ],
   "src/Pages/components/MyGoogleMaps/loadGoogleMapsScript.ts": [
-    "/assets/MyGoogleMaps-B8z51HQl.js"
+    "/assets/MyGoogleMaps-roqiDr9B.js"
   ],
   "src/Pages/components/Navbar/index.tsx": [
     "/assets/doggo-circle-cropped-CdTp4XUF.png",
