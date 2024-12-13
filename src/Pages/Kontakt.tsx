@@ -69,16 +69,16 @@ const Kontakt: React.FC = () => {
           <h1 className="text-xl">Kirjuta Meile</h1>
           <form id="stayRequestForm" className="flex flex-col h-full gap-3" onSubmit={onSubmit}>
             <div className="form-group">
-              <input type="text" id="nimi" placeholder="Nimi..." className="rounded-full px-3 h-10 w-1/2 shadow-lg" />
+              <input type="text" id="nimi" placeholder="Nimi..." className="rounded-full px-3 h-10 laptop:w-1/2 shadow-lg" />
             </div>
             <div className="form-group">
-              <input type="text" id="eMail" placeholder="E-mail..." className="rounded-full px-3 h-10 w-1/2 shadow-lg" />
+              <input type="text" id="eMail" placeholder="E-mail..." className="rounded-full px-3 h-10 laptop:w-1/2 shadow-lg" />
             </div>
-            <div className="form-group flex flex-row items-center gap-4">
+            <div className="form-group flex flex-col laptop:flex-row laptop:items-center gap-4">
                 <label htmlFor="periodStart">Alguskuupäev:</label>
-                <input type="date" name="begin" id="periodStart" className="rounded-full px-3 h-10 w-1/3 shadow-lg" required></input>
+                <input type="date" name="begin" id="periodStart" className="rounded-full px-3 h-10 laptop:w-1/3 shadow-lg" required></input>
                 <label htmlFor="periodEnd ">Lõppkuupäev:</label>
-                <input type="date" name="begin" id="periodEnd" className="rounded-full px-3 h-10 w-1/3 shadow-lg" required></input>
+                <input type="date" name="begin" id="periodEnd" className="rounded-full px-3 h-10 laptop:w-1/3 shadow-lg" required></input>
             </div>
             <div className="form-group h-60 laptop:h-full">
               <textarea id="sisu" placeholder="Kirja sisu..." className="rounded-md px-3 pt-3 h-60 w-full laptop:h-full shadow-lg"/>

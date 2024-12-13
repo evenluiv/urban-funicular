@@ -1,6 +1,6 @@
 import { jsxs, jsx, Fragment } from "react/jsx-runtime";
 import { renderToString } from "react-dom/server";
-import React, { useState, useEffect, Component, lazy, Suspense, useRef } from "react";
+import React, { useState, useEffect, useRef, Component, lazy, Suspense } from "react";
 import { Link, NavLink, Routes, Route, useLocation, BrowserRouter } from "react-router-dom";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/solid";
 import { Fancybox as Fancybox$1 } from "@fancyapps/ui";
@@ -34,8 +34,7 @@ const Navbar = () => {
             /* @__PURE__ */ jsx("div", { className: `${flexBetween} font-semibold text-sm`, children: /* @__PURE__ */ jsxs("ul", { className: `${flexBetween} gap-3`, children: [
               /* @__PURE__ */ jsx("li", { children: /* @__PURE__ */ jsx(NavLink, { to: "/meist", children: "MEIST" }) }),
               /* @__PURE__ */ jsx("li", { children: /* @__PURE__ */ jsx(NavLink, { to: "/hinnakiri", children: "HINNAKIRI" }) }),
-              /* @__PURE__ */ jsx("li", { children: /* @__PURE__ */ jsx(NavLink, { to: "/galerii", children: "GALERII" }) }),
-              /* @__PURE__ */ jsx("li", { children: /* @__PURE__ */ jsx(NavLink, { to: "/blogi", children: "BLOGI" }) })
+              /* @__PURE__ */ jsx("li", { children: /* @__PURE__ */ jsx(NavLink, { to: "/galerii", children: "GALERII" }) })
             ] }) }),
             /* @__PURE__ */ jsx("div", { className: `${flexBetween} bg-blue-100 py-1 px-5 rounded-2xl`, children: /* @__PURE__ */ jsx("button", { children: /* @__PURE__ */ jsx(NavLink, { to: "/kontakt", className: `${flexBetween} font-semibold`, children: "KONTAKT" }) }) })
           ] }) : /* @__PURE__ */ jsx(
@@ -52,42 +51,12 @@ const Navbar = () => {
     !isAboveMediumScreens && isMenuToggeled && /* @__PURE__ */ jsxs("div", { className: "fixed right-0 bottom-0 z-40 h-full w-[300px] bg-blue-100 drop-shadow-xl", children: [
       /* @__PURE__ */ jsx("div", { className: "flex justify-end p-12", children: /* @__PURE__ */ jsx("button", { onClick: () => setIsMenuToggeled(!isMenuToggeled), children: /* @__PURE__ */ jsx(XMarkIcon, { className: "h-6 w-6 text-black" }) }) }),
       /* @__PURE__ */ jsx("div", { className: `flex font-semibold text-2xl`, children: /* @__PURE__ */ jsxs("ul", { className: `flex flex-col gap-4 pl-8`, children: [
-        /* @__PURE__ */ jsx("li", { children: /* @__PURE__ */ jsx(NavLink, { to: "/meist", children: "MEIST" }) }),
-        /* @__PURE__ */ jsx("li", { children: /* @__PURE__ */ jsx(NavLink, { to: "/hinnakiri", children: "HINNAKIRI" }) }),
-        /* @__PURE__ */ jsx("li", { children: /* @__PURE__ */ jsx(NavLink, { to: "/galerii", children: "GALERII" }) }),
-        /* @__PURE__ */ jsx("li", { children: /* @__PURE__ */ jsx(NavLink, { to: "/blogi", children: "BLOGI" }) }),
-        /* @__PURE__ */ jsx("li", { children: /* @__PURE__ */ jsx(NavLink, { to: "/kontakt", children: "KONTAKT" }) })
+        /* @__PURE__ */ jsx("li", { children: /* @__PURE__ */ jsx(NavLink, { to: "/meist", onClick: () => setIsMenuToggeled(!isMenuToggeled), children: "MEIST" }) }),
+        /* @__PURE__ */ jsx("li", { children: /* @__PURE__ */ jsx(NavLink, { to: "/hinnakiri", onClick: () => setIsMenuToggeled(!isMenuToggeled), children: "HINNAKIRI" }) }),
+        /* @__PURE__ */ jsx("li", { children: /* @__PURE__ */ jsx(NavLink, { to: "/galerii", onClick: () => setIsMenuToggeled(!isMenuToggeled), children: "GALERII" }) }),
+        /* @__PURE__ */ jsx("li", { children: /* @__PURE__ */ jsx(NavLink, { to: "/kontakt", onClick: () => setIsMenuToggeled(!isMenuToggeled), children: "KONTAKT" }) })
       ] }) })
     ] })
-  ] });
-};
-class ErrorBoundary extends Component {
-  constructor(props) {
-    super(props);
-    this.state = { hasError: false };
-  }
-  static getDerivedStateFromError() {
-    return { hasError: true };
-  }
-  componentDidCatch(error, errorInfo) {
-    console.error("Error caught by ErrorBoundary:", error, errorInfo);
-  }
-  render() {
-    if (this.state.hasError) {
-      return /* @__PURE__ */ jsx("h1", { children: "Something went wrong." });
-    }
-    return this.props.children;
-  }
-}
-const FacebookPageEmbed = lazy(() => import("./assets/index-CC77Crzf.js"));
-const InstagramEmbed = lazy(() => import("./assets/index-DaQsXLCU.js"));
-const Blogi = () => {
-  return /* @__PURE__ */ jsxs("div", { className: "mx-auto pb-6 pt-24 laptop:w-8/12 w-10/12 bg-pink-100", children: [
-    /* @__PURE__ */ jsx("h1", { className: "flex \n        items-center \n        justify-center \n        text-center \n        desktop:text-left \n        desktop:justify-start \n        text-4xl \n        tablet:text-5xl \n        desktop:text-5xl \n        font-semibold\n        z-10", children: "BLOGI" }),
-    /* @__PURE__ */ jsx("div", { className: "grid grid-cols-1 gap-6 pt-4", children: /* @__PURE__ */ jsxs(ErrorBoundary, { children: [
-      /* @__PURE__ */ jsx(Suspense, { fallback: /* @__PURE__ */ jsx("div", { children: "Loading..." }), children: /* @__PURE__ */ jsx("div", { className: "flex justify-center", children: /* @__PURE__ */ jsx(FacebookPageEmbed, { href: "https://www.facebook.com/facebook" }) }) }),
-      /* @__PURE__ */ jsx(Suspense, { fallback: /* @__PURE__ */ jsx("div", { children: "Loading..." }), children: /* @__PURE__ */ jsx("div", { className: "flex justify-center z-10", children: /* @__PURE__ */ jsx(InstagramEmbed, { url: "https://www.instagram.com/instagram/" }) }) })
-    ] }) })
   ] });
 };
 const dogCircle = "/assets/doggo-circle-cropped-CdTp4XUF.png";
@@ -363,6 +332,24 @@ const Galerii = () => {
     /* @__PURE__ */ jsx(Gallery, {})
   ] });
 };
+class ErrorBoundary extends Component {
+  constructor(props) {
+    super(props);
+    this.state = { hasError: false };
+  }
+  static getDerivedStateFromError() {
+    return { hasError: true };
+  }
+  componentDidCatch(error, errorInfo) {
+    console.error("Error caught by ErrorBoundary:", error, errorInfo);
+  }
+  render() {
+    if (this.state.hasError) {
+      return /* @__PURE__ */ jsx("h1", { children: "Something went wrong." });
+    }
+    return this.props.children;
+  }
+}
 const MyGoogleMaps = lazy(() => import("./assets/MyGoogleMaps-NJUz-7ya.js"));
 const Kontakt = () => {
   const apiKey = "AIzaSyDTR55_DkO-huaSnRYp-a6LxohUI-rLcHw";
@@ -409,13 +396,13 @@ Content: ${content}`);
       /* @__PURE__ */ jsxs("div", { className: "flex flex-col gap-4", children: [
         /* @__PURE__ */ jsx("h1", { className: "text-xl", children: "Kirjuta Meile" }),
         /* @__PURE__ */ jsxs("form", { id: "stayRequestForm", className: "flex flex-col h-full gap-3", onSubmit, children: [
-          /* @__PURE__ */ jsx("div", { className: "form-group", children: /* @__PURE__ */ jsx("input", { type: "text", id: "nimi", placeholder: "Nimi...", className: "rounded-full px-3 h-10 w-1/2 shadow-lg" }) }),
-          /* @__PURE__ */ jsx("div", { className: "form-group", children: /* @__PURE__ */ jsx("input", { type: "text", id: "eMail", placeholder: "E-mail...", className: "rounded-full px-3 h-10 w-1/2 shadow-lg" }) }),
-          /* @__PURE__ */ jsxs("div", { className: "form-group flex flex-row items-center gap-4", children: [
+          /* @__PURE__ */ jsx("div", { className: "form-group", children: /* @__PURE__ */ jsx("input", { type: "text", id: "nimi", placeholder: "Nimi...", className: "rounded-full px-3 h-10 laptop:w-1/2 shadow-lg" }) }),
+          /* @__PURE__ */ jsx("div", { className: "form-group", children: /* @__PURE__ */ jsx("input", { type: "text", id: "eMail", placeholder: "E-mail...", className: "rounded-full px-3 h-10 laptop:w-1/2 shadow-lg" }) }),
+          /* @__PURE__ */ jsxs("div", { className: "form-group flex flex-col laptop:flex-row laptop:items-center gap-4", children: [
             /* @__PURE__ */ jsx("label", { htmlFor: "periodStart", children: "Alguskuupäev:" }),
-            /* @__PURE__ */ jsx("input", { type: "date", name: "begin", id: "periodStart", className: "rounded-full px-3 h-10 w-1/3 shadow-lg", required: true }),
+            /* @__PURE__ */ jsx("input", { type: "date", name: "begin", id: "periodStart", className: "rounded-full px-3 h-10 laptop:w-1/3 shadow-lg", required: true }),
             /* @__PURE__ */ jsx("label", { htmlFor: "periodEnd ", children: "Lõppkuupäev:" }),
-            /* @__PURE__ */ jsx("input", { type: "date", name: "begin", id: "periodEnd", className: "rounded-full px-3 h-10 w-1/3 shadow-lg", required: true })
+            /* @__PURE__ */ jsx("input", { type: "date", name: "begin", id: "periodEnd", className: "rounded-full px-3 h-10 laptop:w-1/3 shadow-lg", required: true })
           ] }),
           /* @__PURE__ */ jsx("div", { className: "form-group h-60 laptop:h-full", children: /* @__PURE__ */ jsx("textarea", { id: "sisu", placeholder: "Kirja sisu...", className: "rounded-md px-3 pt-3 h-60 w-full laptop:h-full shadow-lg" }) }),
           /* @__PURE__ */ jsx("div", { className: "form-group", children: /* @__PURE__ */ jsx("button", { type: "submit", className: "h-10 w-full rounded-full border-black border-solid border-2 bg-blue-100 shadow-lg", children: "Saada" }) })
@@ -446,7 +433,6 @@ const Footer = () => {
       /* @__PURE__ */ jsxs("div", { className: "z-10", children: [
         /* @__PURE__ */ jsx("h4", { className: "font-bold z-10", children: /* @__PURE__ */ jsx(NavLink, { to: "/", children: "Kodu" }) }),
         /* @__PURE__ */ jsxs("ul", { className: "flex flex-col gap-1", children: [
-          /* @__PURE__ */ jsx("li", { children: /* @__PURE__ */ jsx(NavLink, { to: "/blogi", children: "Blogi" }) }),
           /* @__PURE__ */ jsx("li", { children: /* @__PURE__ */ jsx(NavLink, { to: "/meist", children: "Meist" }) }),
           /* @__PURE__ */ jsx("li", { children: /* @__PURE__ */ jsx(NavLink, { to: "/hinnakiri", children: "Hinnakiri" }) }),
           /* @__PURE__ */ jsx("li", { children: /* @__PURE__ */ jsx(NavLink, { to: "/galerii", children: "Galerii" }) })
@@ -472,7 +458,6 @@ const App = () => {
     /* @__PURE__ */ jsx("div", { className: "tablet:flex fixed hidden top-0 right-0 pr-4 z-0 opacity-50", children: /* @__PURE__ */ jsx("img", { src: tribalPattern, alt: "right decoration" }) }),
     /* @__PURE__ */ jsxs(Routes, { children: [
       /* @__PURE__ */ jsx(Route, { path: "/", element: /* @__PURE__ */ jsx(Kodu, {}) }),
-      /* @__PURE__ */ jsx(Route, { path: "/blogi", element: /* @__PURE__ */ jsx(Blogi, {}) }),
       /* @__PURE__ */ jsx(Route, { path: "/meist", element: /* @__PURE__ */ jsx(Meist, {}) }),
       /* @__PURE__ */ jsx(Route, { path: "/hinnakiri", element: /* @__PURE__ */ jsx(Hinnakiri, {}) }),
       /* @__PURE__ */ jsx(Route, { path: "/galerii", element: /* @__PURE__ */ jsx(Galerii, {}) }),

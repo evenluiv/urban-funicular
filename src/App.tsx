@@ -1,6 +1,6 @@
 import { Route, Routes } from "react-router-dom"
 import Navbar from "./Pages/components/Navbar"
-import Blogi from "./Pages/Blogi"
+{/*import Blogi from "./Pages/Blogi"*/}
 import Kodu from "./Pages/Kodu/index"
 import Meist from "./Pages/Meist"
 import Hinnakiri from "./Pages/Hinnakiri"
@@ -24,7 +24,7 @@ const App = () => {
       </div>
       <Routes>
         <Route path="/" element={<Kodu />} />
-        <Route path="/blogi" element={<Blogi />} />
+        {/*<Route path="/blogi" element={<Blogi />} />*/}
         <Route path="/meist" element={<Meist />} />
         <Route path="/hinnakiri" element={<Hinnakiri />} />
         <Route path="/galerii" element={<Galerii />} />

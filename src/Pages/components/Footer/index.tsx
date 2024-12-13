@@ -19,9 +19,11 @@ const Footer = () => {
                             <NavLink to="/">Kodu</NavLink>
                         </h4>
                         <ul className="flex flex-col gap-1">
+                            {/*
                             <li>
                                 <NavLink to="/blogi">Blogi</NavLink>
                             </li>
+                            */}
                             <li>
                                 <NavLink to="/meist">Meist</NavLink>
                             </li>

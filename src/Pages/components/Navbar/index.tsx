@@ -36,9 +36,11 @@ const Navbar = () => {
                                 <li>
                                     <NavLink to="/galerii">GALERII</NavLink>
                                 </li>
+                                {/*
                                 <li>
                                     <NavLink to="/blogi">BLOGI</NavLink>
                                 </li>
+                                */}
                             </ul>
                         </div>
                         <div className={`${flexBetween} bg-blue-100 py-1 px-5 rounded-2xl`}>
@@ -73,19 +75,21 @@ const Navbar = () => {
             <div className={`flex font-semibold text-2xl`}>
                 <ul className={`flex flex-col gap-4 pl-8`}>
                     <li>
-                        <NavLink to="/meist">MEIST</NavLink>
+                        <NavLink to="/meist" onClick={() => setIsMenuToggeled(!isMenuToggeled)}>MEIST</NavLink>
                     </li>
                     <li>
-                        <NavLink to="/hinnakiri">HINNAKIRI</NavLink>
+                        <NavLink to="/hinnakiri" onClick={() => setIsMenuToggeled(!isMenuToggeled)}>HINNAKIRI</NavLink>
                     </li>
                     <li>
-                        <NavLink to="/galerii">GALERII</NavLink>
+                        <NavLink to="/galerii" onClick={() => setIsMenuToggeled(!isMenuToggeled)}>GALERII</NavLink>
                     </li>
+                    {/*
                     <li>
                         <NavLink to="/blogi">BLOGI</NavLink>
                     </li>
+                    */}
                     <li>
-                        <NavLink to="/kontakt">KONTAKT</NavLink>
+                        <NavLink to="/kontakt" onClick={() => setIsMenuToggeled(!isMenuToggeled)}>KONTAKT</NavLink>
                     </li>
                 </ul>
             </div>
